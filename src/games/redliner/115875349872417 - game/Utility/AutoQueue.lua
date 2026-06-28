@@ -1,7 +1,7 @@
-local AutoQueue
+﻿local AutoQueue
 local Mode
 
-AutoQueue = vape.Categories.Utility:CreateModule({
+AutoQueue = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoQueue',
 	Function = function(callback)
 		if game.PlaceId == 94987506187454 then

@@ -1,6 +1,6 @@
-local AutoCloudGrind
+﻿local AutoCloudGrind
 
-AutoCloudGrind = vape.Categories.Minigames:CreateModule({
+AutoCloudGrind = Kiss.Categories.Minigames:CreateModule({
 	Name = 'AutoCloudGrind',
 	Function = function(callback)
 		if callback then

@@ -1,6 +1,6 @@
-local PickupTP
+﻿local PickupTP
 
-PickupTP = vape.Categories.Blatant:CreateModule({
+PickupTP = Kiss.Categories.Blatant:CreateModule({
 	Name = 'PickupTP',
 	Function = function(callback)
 		if callback then

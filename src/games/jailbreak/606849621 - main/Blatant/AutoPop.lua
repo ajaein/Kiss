@@ -1,4 +1,4 @@
-local AutoPop
+﻿local AutoPop
 local Range
 local TeamCheck
 
@@ -49,7 +49,7 @@ local function getVehiclesNear()
 	return allowed
 end
 
-AutoPop = vape.Categories.Blatant:CreateModule({
+AutoPop = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoPop',
 	Function = function(callback)
 		if callback then

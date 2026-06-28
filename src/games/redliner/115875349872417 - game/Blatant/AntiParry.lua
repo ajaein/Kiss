@@ -1,9 +1,9 @@
-local AntiParry
+﻿local AntiParry
 local anims = {
 	[replicatedStorage.Assets.Animations:FindFirstChild('3P_Parry', true).AnimationId] = true
 }
 
-AntiParry = vape.Categories.Blatant:CreateModule({
+AntiParry = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiParry',
 	Function = function(callback)
 		if callback then

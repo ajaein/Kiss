@@ -1,4 +1,4 @@
-local StaffDetector
+﻿local StaffDetector
 local Mode
 local Profile
 local Users
@@ -28,8 +28,8 @@ local function getLowestStaffRole(roles)
 end
 
 local function playerAdded(plr)
-	if not vape.Loaded then
-		repeat task.wait() until vape.Loaded
+	if not Kiss.Loaded then
+		repeat task.wait() until Kiss.Loaded
 	end
 
 	local user = table.find(Users.ListEnabled, tostring(plr.UserId))
@@ -39,7 +39,7 @@ local function playerAdded(plr)
 
 		if Mode.Value == 'Uninject' then
 			task.spawn(function()
-				vape:Uninject()
+				Kiss:Uninject()
 			end)
 			game:GetService('StarterGui'):SetCore('SendNotification', {
 				Title = 'StaffDetector',
@@ -49,14 +49,14 @@ local function playerAdded(plr)
 		elseif Mode.Value == 'ServerHop' then
 			serverHop()
 		elseif Mode.Value == 'Profile' then
-			vape.Save = function() end
-			if vape.Profile ~= Profile.Value then
-				vape.Profile = Profile.Value
-				vape:Load(true, Profile.Value)
+			Kiss.Save = function() end
+			if Kiss.Profile ~= Profile.Value then
+				Kiss.Profile = Profile.Value
+				Kiss:Load(true, Profile.Value)
 			end
 		elseif Mode.Value == 'AutoConfig' then
-			vape.Save = function() end
-			for _, v in vape.Modules do
+			Kiss.Save = function() end
+			for _, v in Kiss.Modules do
 				if v.Enabled then
 					v:Toggle()
 				end
@@ -65,7 +65,7 @@ local function playerAdded(plr)
 	end
 end
 
-StaffDetector = vape.Categories.Utility:CreateModule({
+StaffDetector = Kiss.Categories.Utility:CreateModule({
 	Name = 'StaffDetector',
 	Function = function(callback)
 		if callback then

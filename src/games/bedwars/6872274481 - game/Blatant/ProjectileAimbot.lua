@@ -1,4 +1,4 @@
-local TargetPart
+﻿local TargetPart
 local Targets
 local FOV
 local OtherProjectiles
@@ -7,7 +7,7 @@ rayCheck.FilterType = Enum.RaycastFilterType.Include
 rayCheck.FilterDescendantsInstances = {workspace:FindFirstChild('Map')}
 local old
 
-local ProjectileAimbot = vape.Categories.Blatant:CreateModule({
+local ProjectileAimbot = Kiss.Categories.Blatant:CreateModule({
 	Name = 'ProjectileAimbot',
 	Function = function(callback)
 		if callback then

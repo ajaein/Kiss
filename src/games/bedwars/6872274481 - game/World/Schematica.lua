@@ -1,4 +1,4 @@
-local Schematica
+﻿local Schematica
 local File
 local Mode
 local Transparency
@@ -164,7 +164,7 @@ local function load(read)
 	end
 end
 
-Schematica = vape.Categories.World:CreateModule({
+Schematica = Kiss.Categories.World:CreateModule({
 	Name = 'Schematica',
 	Function = function(callback)
 		if callback then

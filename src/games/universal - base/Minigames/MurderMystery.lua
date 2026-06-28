@@ -1,4 +1,4 @@
-local MurderMystery
+﻿local MurderMystery
 local murderer, sheriff, oldtargetable, oldgetcolor
 
 local function itemAdded(v, plr)
@@ -39,7 +39,7 @@ local function playerAdded(plr)
 	end
 end
 
-MurderMystery = vape.Categories.Minigames:CreateModule({
+MurderMystery = Kiss.Categories.Minigames:CreateModule({
 	Name = 'MurderMystery',
 	Function = function(callback)
 		if callback then
@@ -47,9 +47,9 @@ MurderMystery = vape.Categories.Minigames:CreateModule({
 
 			entitylib.getEntityColor = function(ent)
 				ent = ent.Player
-				if not (ent and vape.Categories.Main.Options['Use team color'].Enabled) then return end
+				if not (ent and Kiss.Categories.Main.Options['Use team color'].Enabled) then return end
 				if isFriend(ent, true) then
-					return Color3.fromHSV(vape.Categories.Friends.Options['Friends color'].Hue, vape.Categories.Friends.Options['Friends color'].Sat, vape.Categories.Friends.Options['Friends color'].Value)
+					return Color3.fromHSV(Kiss.Categories.Friends.Options['Friends color'].Hue, Kiss.Categories.Friends.Options['Friends color'].Sat, Kiss.Categories.Friends.Options['Friends color'].Value)
 				end
 				return murderer == ent and Color3.new(1, 0.3, 0.3) or sheriff == ent and Color3.new(0, 0.5, 1) or nil
 			end

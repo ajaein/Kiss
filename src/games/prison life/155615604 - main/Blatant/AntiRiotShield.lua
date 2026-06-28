@@ -1,6 +1,6 @@
-local AntiRiotShield
+﻿local AntiRiotShield
 
-AntiRiotShield = vape.Categories.Blatant:CreateModule({
+AntiRiotShield = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiRiotShield',
 	Function = function(callback)
 		if callback then

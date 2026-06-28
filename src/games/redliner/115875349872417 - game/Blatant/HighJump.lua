@@ -1,7 +1,7 @@
-local HighJump
+﻿local HighJump
 local Value
 
-HighJump = vape.Categories.Blatant:CreateModule({
+HighJump = Kiss.Categories.Blatant:CreateModule({
 	Name = 'HighJump',
 	Function = function(callback)
 		if callback then

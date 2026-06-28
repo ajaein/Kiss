@@ -1,4 +1,4 @@
-local SpinBot
+﻿local SpinBot
 local Mode
 local XToggle
 local YToggle
@@ -6,7 +6,7 @@ local ZToggle
 local Value
 local AngularVelocity
 
-SpinBot = vape.Categories.Blatant:CreateModule({
+SpinBot = Kiss.Categories.Blatant:CreateModule({
 	Name = 'SpinBot',
 	Function = function(callback)
 		if callback then

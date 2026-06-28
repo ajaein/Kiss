@@ -1,4 +1,4 @@
-local Atmosphere
+﻿local Atmosphere
 local Toggles = {}
 local newobjects, oldobjects = {}, {}
 local apidump = {
@@ -58,7 +58,7 @@ local function removeObject(v)
 	end
 end
 
-Atmosphere = vape.Legit:CreateModule({
+Atmosphere = Kiss.Legit:CreateModule({
 	Name = 'Atmosphere',
 	Function = function(callback)
 		if callback then

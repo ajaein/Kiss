@@ -1,4 +1,4 @@
-local BedProtector
+﻿local BedProtector
 
 local function getBedNear()
 	local localPosition = entitylib.isAlive and entitylib.character.RootPart.Position or Vector3.zero
@@ -36,7 +36,7 @@ local function getPyramid(size, grid)
 	return positions
 end
 
-BedProtector = vape.Categories.World:CreateModule({
+BedProtector = Kiss.Categories.World:CreateModule({
 	Name = 'BedProtector',
 	Function = function(callback)
 		if callback then

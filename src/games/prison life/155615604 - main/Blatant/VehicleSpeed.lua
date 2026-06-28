@@ -1,9 +1,9 @@
-local VehicleSpeed
+﻿local VehicleSpeed
 local Speed
 local old
 local seats = {}
 
-VehicleSpeed = vape.Categories.Blatant:CreateModule({
+VehicleSpeed = Kiss.Categories.Blatant:CreateModule({
 	Name = 'VehicleSpeed',
 	Function = function(callback)
 		if callback then

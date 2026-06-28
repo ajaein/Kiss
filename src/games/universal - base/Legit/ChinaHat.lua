@@ -1,13 +1,13 @@
-local ChinaHat
+﻿local ChinaHat
 local Material
 local Color
 local hat
 
-ChinaHat = vape.Legit:CreateModule({
+ChinaHat = Kiss.Legit:CreateModule({
 	Name = 'China Hat',
 	Function = function(callback)
 		if callback then
-			if vape.ThreadFix then
+			if Kiss.ThreadFix then
 				setthreadidentity(8)
 			end
 

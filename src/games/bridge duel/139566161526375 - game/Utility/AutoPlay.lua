@@ -1,7 +1,7 @@
-local AutoPlay
+﻿local AutoPlay
 local Delay
 
-AutoPlay = vape.Categories.Utility:CreateModule({
+AutoPlay = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoPlay',
 	Function = function(callback)
 		if callback then

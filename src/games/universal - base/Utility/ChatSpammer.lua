@@ -1,11 +1,11 @@
-local ChatSpammer
+﻿local ChatSpammer
 local Lines
 local Mode
 local Delay
 local Hide
 local oldchat
 
-ChatSpammer = vape.Categories.Utility:CreateModule({
+ChatSpammer = Kiss.Categories.Utility:CreateModule({
 	Name = 'ChatSpammer',
 	Function = function(callback)
 		if callback then

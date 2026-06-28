@@ -1,4 +1,4 @@
-local AutoToxic
+﻿local AutoToxic
 local Toggles, Lists, said, dead = {}, {}, {}
 
 local function sendMessage(name, obj, default)
@@ -21,11 +21,11 @@ local function sendMessage(name, obj, default)
 	end
 end
 
-AutoToxic = vape.Categories.Utility:CreateModule({
+AutoToxic = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoToxic',
 	Function = function(callback)
 		if callback then
-			AutoToxic:Clean(vapeEvents.CheaterKicked.Event:Connect(function(plr)
+			AutoToxic:Clean(KissEvents.CheaterKicked.Event:Connect(function(plr)
 				sendMessage('Kicked', plr, 'skill issue cheat | <obj>')
 			end))
 		end

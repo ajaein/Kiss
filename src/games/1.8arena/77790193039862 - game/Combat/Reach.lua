@@ -1,8 +1,8 @@
-local Reach
+﻿local Reach
 local Value
 local old
 
-Reach = vape.Categories.Combat:CreateModule({
+Reach = Kiss.Categories.Combat:CreateModule({
 	Name = 'Reach',
 	Function = function(callback)
 		if callback then

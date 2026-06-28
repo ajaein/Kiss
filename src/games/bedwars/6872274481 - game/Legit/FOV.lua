@@ -1,8 +1,8 @@
-local FOV
+﻿local FOV
 local Value
 local old, old2
 
-FOV = vape.Legit:CreateModule({
+FOV = Kiss.Legit:CreateModule({
 	Name = 'FOV',
 	Function = function(callback)
 		if callback then

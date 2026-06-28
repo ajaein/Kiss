@@ -1,4 +1,4 @@
-local AutoReload
+﻿local AutoReload
 local HotSwap
 local thread, oldplaysound
 local priority = {
@@ -29,7 +29,7 @@ local function getWeapon()
 	end
 end
 
-AutoReload = vape.Categories.Utility:CreateModule({
+AutoReload = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoReload',
 	Function = function(callback)
 		if callback then

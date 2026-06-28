@@ -1,6 +1,6 @@
-local ForceHeadshot
+﻿local ForceHeadshot
 
-ForceHeadshot = vape.Categories.Combat:CreateModule({
+ForceHeadshot = Kiss.Categories.Combat:CreateModule({
 	Name = 'ForceHeadshot',
 	Function = function(callback)
 		if callback then

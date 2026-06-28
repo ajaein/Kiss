@@ -1,8 +1,8 @@
-local HitColor
+﻿local HitColor
 local Color
 local done = {}
 
-HitColor = vape.Legit:CreateModule({
+HitColor = Kiss.Legit:CreateModule({
 	Name = 'Hit Color',
 	Function = function(callback)
 		if callback then 

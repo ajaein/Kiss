@@ -1,4 +1,4 @@
-local AutoBuy
+﻿local AutoBuy
 local Sword
 local Armor
 local Pickaxe
@@ -42,11 +42,11 @@ local function buyTeamUpgrade(upgrade, currencytable)
 	end
 end
 
-AutoBuy = vape.Categories.Inventory:CreateModule({
+AutoBuy = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoBuy',
 	Function = function(callback)
 		if callback then
-			AutoBuy:Clean(vapeEvents.CurrencyChange.Event:Connect(buyCheck))
+			AutoBuy:Clean(KissEvents.CurrencyChange.Event:Connect(buyCheck))
 			buyCheck(table.clone(skywars.Store:getState().GameCurrency.Quantities))
 		end
 	end,

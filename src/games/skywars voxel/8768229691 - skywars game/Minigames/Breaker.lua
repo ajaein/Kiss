@@ -1,4 +1,4 @@
-local Breaker
+﻿local Breaker
 local Range
 local BreakerPart
 local BreakerUI
@@ -47,7 +47,7 @@ local function customHealthbar(block, health, maxHealth, changeHealth)
 					Size = UDim2.new(1, 89, 1, 52),
 					Position = UDim2.fromOffset(-48, -31),
 					BackgroundTransparency = 1,
-					Image = getcustomasset('newvape/assets/new/blur.png'),
+					Image = getcustomasset('newKiss/assets/new/blur.png'),
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(52, 31, 261, 502)
 				}),
@@ -108,7 +108,7 @@ local function customHealthbar(block, health, maxHealth, changeHealth)
 	end)
 end
 
-Breaker = vape.Categories.Minigames:CreateModule({
+Breaker = Kiss.Categories.Minigames:CreateModule({
 	Name = 'Breaker',
 	Function = function(callback)
 		if callback then

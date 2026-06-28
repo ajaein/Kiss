@@ -1,4 +1,4 @@
-local Mode
+﻿local Mode
 local Expand
 local objects, set = {}
 
@@ -19,7 +19,7 @@ local function createHitbox(ent)
 	end
 end
 
-HitBoxes = vape.Categories.Blatant:CreateModule({
+HitBoxes = Kiss.Categories.Blatant:CreateModule({
 	Name = 'HitBoxes',
 	Function = function(callback)
 		if callback then

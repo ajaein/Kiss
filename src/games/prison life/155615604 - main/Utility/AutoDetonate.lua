@@ -1,4 +1,4 @@
-local AutoDetonate
+﻿local AutoDetonate
 local SafeCheck
 local localc4
 local ticks = 0
@@ -6,7 +6,7 @@ local rayParams = RaycastParams.new()
 rayParams.CollisionGroup = 'ClientBullet'
 rayParams.FilterType = Enum.RaycastFilterType.Exclude
 
-AutoDetonate = vape.Categories.Utility:CreateModule({
+AutoDetonate = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoDetonate',
 	Function = function(callback)
 		if callback then

@@ -1,7 +1,7 @@
-local PickupRange
+﻿local PickupRange
 local Range
 
-PickupRange = vape.Categories.Utility:CreateModule({
+PickupRange = Kiss.Categories.Utility:CreateModule({
 	Name = 'PickupRange',
 	Function = function(callback)
 		if callback then

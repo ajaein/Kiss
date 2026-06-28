@@ -1,13 +1,13 @@
-local Waypoints
+﻿local Waypoints
 local FontOption
 local List
 local Color
 local Scale
 local Background
 WaypointFolder = Instance.new('Folder')
-WaypointFolder.Parent = vape.gui
+WaypointFolder.Parent = Kiss.gui
 
-Waypoints = vape.Categories.Render:CreateModule({
+Waypoints = Kiss.Categories.Render:CreateModule({
 	Name = 'Waypoints',
 	Function = function(callback)
 		if callback then
@@ -101,3 +101,4 @@ Background = Waypoints:CreateSlider({
 	Max = 1,
 	Decimal = 10
 })
+

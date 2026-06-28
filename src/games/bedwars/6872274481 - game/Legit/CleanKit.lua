@@ -1,4 +1,4 @@
-vape.Legit:CreateModule({
+﻿Kiss.Legit:CreateModule({
 	Name = 'Clean Kit',
 	Function = function(callback)
 		if callback then

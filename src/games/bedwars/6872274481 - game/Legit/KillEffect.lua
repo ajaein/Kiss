@@ -1,4 +1,4 @@
-local KillEffect
+﻿local KillEffect
 local Mode
 local List
 local NameToId = {}
@@ -102,7 +102,7 @@ local killeffects = {
 	end
 }
 
-KillEffect = vape.Legit:CreateModule({
+KillEffect = Kiss.Legit:CreateModule({
 	Name = 'Kill Effect',
 	Function = function(callback)
 		if callback then

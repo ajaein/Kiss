@@ -1,4 +1,4 @@
-local Cape
+﻿local Cape
 local Texture
 local part, motor
 
@@ -17,7 +17,7 @@ local function createMotor(char)
 	motor.Parent = part
 end
 
-Cape = vape.Legit:CreateModule({
+Cape = Kiss.Legit:CreateModule({
 	Name = 'Cape',
 	Function = function(callback)
 		if callback then

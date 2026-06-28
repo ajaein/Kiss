@@ -1,4 +1,4 @@
-local AutoBuy
+﻿local AutoBuy
 local Sword
 local Armor
 local Upgrades
@@ -77,7 +77,7 @@ local function getShopNPC()
 	return shop, items, upgrades
 end
 
-AutoBuy = vape.Categories.Inventory:CreateModule({
+AutoBuy = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoBuy',
 	Function = function(callback)
 		if callback then

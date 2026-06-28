@@ -1,4 +1,4 @@
-local run = function(func) func() end
+﻿local run = function(func) func() end
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -11,13 +11,13 @@ local coreGui = cloneref(game:GetService('CoreGui'))
 
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local targetinfo = vape.Libraries.targetinfo
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local targetinfo = Kiss.Libraries.targetinfo
 local bt = {}
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 run(function()
@@ -30,11 +30,11 @@ run(function()
 		Variables = require(replicatedFirst.Variables)
 	}
 
-	vape:Clean(function()
+	Kiss:Clean(function()
 		table.clear(bt)
 	end)
 end)
 
 for _, v in {'AimAssist', 'Reach', 'SilentAim', 'TriggerBot', 'AntiFall', 'HitBoxes', 'Invisible', 'Jesus', 'Killaura', 'TargetStrafe', 'AntiRagdoll', 'Disabler', 'MurderMystery', 'Freecam', 'ChatSpammer', 'SpinBot'} do
-	vape:Remove(v)
+	Kiss:Remove(v)
 end

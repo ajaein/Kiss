@@ -1,6 +1,6 @@
-local AutoCamel
+﻿local AutoCamel
 
-AutoCamel = vape.Categories.Minigames:CreateModule({
+AutoCamel = Kiss.Categories.Minigames:CreateModule({
 	Name = 'AutoCamel',
 	Function = function(callback)
 		if callback then

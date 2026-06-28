@@ -1,14 +1,14 @@
-local HitSound
+﻿local HitSound
 local Value
 local Volume
 local PitchShift
 local old, sounds = nil, {}
 
-HitSound = vape.Legit:CreateModule({
+HitSound = Kiss.Legit:CreateModule({
 	Name = 'HitSound',
 	Function = function(callback)
 		if callback then
-			HitSound:Clean(vapeEvents.Hit.Event:Connect(function()
+			HitSound:Clean(KissEvents.Hit.Event:Connect(function()
 				if #sounds > 0 then
 					local obj = Instance.new('Sound')
 					obj.SoundId = sounds[math.random(1, #sounds)]

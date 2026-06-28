@@ -1,4 +1,4 @@
-local AutoConsume
+﻿local AutoConsume
 
 local function consumeCheck()
 	if (lplr:GetAttribute('Shield') or 0) <= 0 and getItem('Shield') then
@@ -8,11 +8,11 @@ local function consumeCheck()
 	end
 end
 
-AutoConsume = vape.Categories.Inventory:CreateModule({
+AutoConsume = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoConsume',
 	Function = function(callback)
 		if callback then
-			AutoConsume:Clean(vapeEvents.InventoryAmountChanged.Event:Connect(consumeCheck))
+			AutoConsume:Clean(KissEvents.InventoryAmountChanged.Event:Connect(consumeCheck))
 			AutoConsume:Clean(lplr:GetAttributeChangedSignal('Shield'):Connect(consumeCheck))
 			consumeCheck()
 		end

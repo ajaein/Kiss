@@ -1,6 +1,6 @@
-local NoHurtCam
+﻿local NoHurtCam
 
-NoHurtCam = vape.Categories.Render:CreateModule({
+NoHurtCam = Kiss.Categories.Render:CreateModule({
 	Name = 'NoHurtCam',
 	Function = function(callback)
 		if callback then

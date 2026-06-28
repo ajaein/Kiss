@@ -1,4 +1,4 @@
-local AimAssist
+﻿local AimAssist
 local Targets
 local Sort
 local AimSpeed
@@ -8,7 +8,7 @@ local StrafeIncrease
 local KillauraTarget
 local ClickAim
 
-AimAssist = vape.Categories.Combat:CreateModule({
+AimAssist = Kiss.Categories.Combat:CreateModule({
 	Name = 'AimAssist',
 	Function = function(callback)
 		if callback then

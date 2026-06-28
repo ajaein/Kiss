@@ -1,4 +1,4 @@
-local Disabler
+﻿local Disabler
 
 local function characterAdded(char)
 	for _, v in getconnections(char.RootPart:GetPropertyChangedSignal('CFrame')) do
@@ -10,7 +10,7 @@ local function characterAdded(char)
 	end
 end
 
-Disabler = vape.Categories.Utility:CreateModule({
+Disabler = Kiss.Categories.Utility:CreateModule({
 	Name = 'Disabler',
 	Function = function(callback)
 		if callback then

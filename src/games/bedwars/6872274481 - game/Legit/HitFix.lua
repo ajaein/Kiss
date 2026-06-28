@@ -1,4 +1,4 @@
-vape.Legit:CreateModule({
+﻿Kiss.Legit:CreateModule({
 	Name = 'HitFix',
 	Function = function(callback)
 		debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 23, callback and 'raycast' or 'Raycast')

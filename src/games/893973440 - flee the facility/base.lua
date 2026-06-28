@@ -1,10 +1,10 @@
-local run = function(func)
+﻿local run = function(func)
 	func()
 end
 local cloneref = cloneref or function(obj)
 	return obj
 end
-local vapeEvents = setmetatable({}, {
+local KissEvents = setmetatable({}, {
 	__index = function(self, index)
 		self[index] = Instance.new('BindableEvent')
 		return self[index]
@@ -21,17 +21,17 @@ local coreGui = cloneref(game:GetService('CoreGui'))
 
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local targetinfo = vape.Libraries.targetinfo
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local targetinfo = Kiss.Libraries.targetinfo
 local mapobj
 local lstats
 
 local function isFriend(plr, recolor)
-	if vape.Categories.Friends.Options['Use friends'].Enabled then
-		local friend = table.find(vape.Categories.Friends.ListEnabled, plr.Name) and true
+	if Kiss.Categories.Friends.Options['Use friends'].Enabled then
+		local friend = table.find(Kiss.Categories.Friends.ListEnabled, plr.Name) and true
 		if recolor then
-			friend = friend and vape.Categories.Friends.Options['Recolor visuals'].Enabled
+			friend = friend and Kiss.Categories.Friends.Options['Recolor visuals'].Enabled
 		end
 		return friend
 	end
@@ -39,7 +39,7 @@ local function isFriend(plr, recolor)
 end
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 local function waitForChildOfType(obj, name, timeout, prop)
@@ -59,9 +59,9 @@ run(function()
 		repeat
 			lstats = lplr:FindFirstChild('TempPlayerStatsModule')
 			task.wait()
-		until lstats or vape.Loaded == nil
+		until lstats or Kiss.Loaded == nil
 
-		if vape.Loaded == nil then
+		if Kiss.Loaded == nil then
 			return
 		end
 	end
@@ -70,14 +70,14 @@ run(function()
 	local function updateMap()
 		if mapval.Value then
 			mapobj = mapval.Value
-			vapeEvents.MapAdded:Fire(mapobj)
+			KissEvents.MapAdded:Fire(mapobj)
 		elseif mapboj then
-			vapeEvents.MapRemoved:Fire(mapboj)
+			KissEvents.MapRemoved:Fire(mapboj)
 			mapobj = nil
 		end
 	end
 
-	vape:Clean(mapval:GetPropertyChangedSignal('Value'):Connect(updateMap))
+	Kiss:Clean(mapval:GetPropertyChangedSignal('Value'):Connect(updateMap))
 	if mapval.Value then
 		updateMap()
 	end
@@ -137,9 +137,9 @@ run(function()
 	end
 
 	entitylib.getEntityColor = function(ent)
-		if not (ent.Player and vape.Categories.Main.Options['Use team color'].Enabled) then return end
+		if not (ent.Player and Kiss.Categories.Main.Options['Use team color'].Enabled) then return end
 		if isFriend(ent.Player, true) then
-			return Color3.fromHSV(vape.Categories.Friends.Options['Friends color'].Hue, vape.Categories.Friends.Options['Friends color'].Sat, vape.Categories.Friends.Options['Friends color'].Value)
+			return Color3.fromHSV(Kiss.Categories.Friends.Options['Friends color'].Hue, Kiss.Categories.Friends.Options['Friends color'].Sat, Kiss.Categories.Friends.Options['Friends color'].Value)
 		end
 		return ent.IsBeast and Color3.new(1, 0.2, 0.2) or Color3.new(0.3, 1, 0.3)
 	end
@@ -148,5 +148,5 @@ run(function()
 end)
 
 for _, v in {'AimAssist', 'Reach', 'SilentAim', 'TriggerBot', 'AntiFall', 'Invisible', 'Jesus', 'Killaura', 'AntiRagdoll', 'Disabler', 'MurderMystery'} do
-	vape:Remove(v)
+	Kiss:Remove(v)
 end

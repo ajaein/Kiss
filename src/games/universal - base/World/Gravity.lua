@@ -1,9 +1,9 @@
-local Gravity
+﻿local Gravity
 local Mode
 local Value
 local changed, old = false
 
-Gravity = vape.Categories.World:CreateModule({
+Gravity = Kiss.Categories.World:CreateModule({
 	Name = 'Gravity',
 	Function = function(callback)
 		if callback then

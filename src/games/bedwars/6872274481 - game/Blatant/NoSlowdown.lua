@@ -1,6 +1,6 @@
-local old
+﻿local old
 
-vape.Categories.Blatant:CreateModule({
+Kiss.Categories.Blatant:CreateModule({
 	Name = 'NoSlowdown',
 	Function = function(callback)
 		local modifier = bedwars.SprintController:getMovementStatusModifier()

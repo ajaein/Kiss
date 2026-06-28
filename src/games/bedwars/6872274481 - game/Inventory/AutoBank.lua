@@ -1,4 +1,4 @@
-local AutoBank
+﻿local AutoBank
 local UIToggle
 local UI
 local Chests
@@ -71,7 +71,7 @@ local function handleState()
 	end
 end
 
-AutoBank = vape.Categories.Inventory:CreateModule({
+AutoBank = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoBank',
 	Function = function(callback)
 		if callback then
@@ -81,7 +81,7 @@ AutoBank = vape.Categories.Inventory:CreateModule({
 			UI.Position = UDim2.fromOffset(0, -240)
 			UI.BackgroundTransparency = 1
 			UI.Visible = UIToggle.Enabled
-			UI.Parent = vape.gui
+			UI.Parent = Kiss.gui
 			AutoBank:Clean(UI)
 			local Sort = Instance.new('UIListLayout')
 			Sort.FillDirection = Enum.FillDirection.Horizontal

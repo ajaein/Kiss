@@ -1,10 +1,10 @@
-local run = function(func)
+﻿local run = function(func)
 	func()
 end
 local cloneref = cloneref or function(obj)
 	return obj
 end
-local vapeEvents = setmetatable({}, {
+local KissEvents = setmetatable({}, {
 	__index = function(self, index)
 		self[index] = Instance.new('BindableEvent')
 		return self[index]
@@ -24,16 +24,16 @@ local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
 local assetfunction = getcustomasset
 
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local targetinfo = vape.Libraries.targetinfo
-local sessioninfo = vape.Libraries.sessioninfo
-local uipallet = vape.Libraries.uipallet
-local tween = vape.Libraries.tween
-local color = vape.Libraries.color
-local whitelist = vape.Libraries.whitelist
-local prediction = vape.Libraries.prediction
-local getcustomasset = vape.Libraries.getcustomasset
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local targetinfo = Kiss.Libraries.targetinfo
+local sessioninfo = Kiss.Libraries.sessioninfo
+local uipallet = Kiss.Libraries.uipallet
+local tween = Kiss.Libraries.tween
+local color = Kiss.Libraries.color
+local whitelist = Kiss.Libraries.whitelist
+local prediction = Kiss.Libraries.prediction
+local getcustomasset = Kiss.Libraries.getcustomasset
 
 local skywars, remotes = {}, {}
 local store = {
@@ -125,10 +125,10 @@ local function getPickaxe()
 end
 
 local function isFriend(plr, recolor)
-	if vape.Categories.Friends.Options['Use friends'].Enabled then
-		local friend = table.find(vape.Categories.Friends.ListEnabled, plr.Name) and true
+	if Kiss.Categories.Friends.Options['Use friends'].Enabled then
+		local friend = table.find(Kiss.Categories.Friends.ListEnabled, plr.Name) and true
 		if recolor then
-			friend = friend and vape.Categories.Friends.Options['Recolor visuals'].Enabled
+			friend = friend and Kiss.Categories.Friends.Options['Recolor visuals'].Enabled
 		end
 		return friend
 	end
@@ -136,11 +136,11 @@ local function isFriend(plr, recolor)
 end
 
 local function isTarget(plr)
-	return table.find(vape.Categories.Targets.ListEnabled, plr.Name) and true
+	return table.find(Kiss.Categories.Targets.ListEnabled, plr.Name) and true
 end
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 local function parsePositions(v, func)
@@ -263,9 +263,9 @@ run(function()
 
 	entitylib.getEntityColor = function(ent)
 		ent = ent.Player
-		if not (ent and vape.Categories.Main.Options['Use team color'].Enabled) then return end
+		if not (ent and Kiss.Categories.Main.Options['Use team color'].Enabled) then return end
 		if isFriend(ent, true) then
-			return Color3.fromHSV(vape.Categories.Friends.Options['Friends color'].Hue, vape.Categories.Friends.Options['Friends color'].Sat, vape.Categories.Friends.Options['Friends color'].Value)
+			return Color3.fromHSV(Kiss.Categories.Friends.Options['Friends color'].Hue, Kiss.Categories.Friends.Options['Friends color'].Sat, Kiss.Categories.Friends.Options['Friends color'].Value)
 		end
 		return skywars.TeamController:getTeamColour(ent:GetAttribute('TeamId'))
 	end
@@ -330,7 +330,7 @@ run(function()
 
 	local function updateStore(newStore, oldStore)
 		if newStore.GameCurrency ~= oldStore.GameCurrency then
-			vapeEvents.CurrencyChange:Fire(table.clone(newStore.GameCurrency.Quantities))
+			KissEvents.CurrencyChange:Fire(table.clone(newStore.GameCurrency.Quantities))
 		end
 
 		if newStore.ActiveSlot ~= oldStore.ActiveSlot then
@@ -344,7 +344,7 @@ run(function()
 			store.hand = store.hand and skywars.ItemMeta[store.hand.Type] or {}
 			store.tools.sword = getSword()
 			store.tools.pickaxe = getPickaxe()
-			vapeEvents.InventoryAmountChanged:Fire()
+			KissEvents.InventoryAmountChanged:Fire()
 		end
 
 		if oldStore.Profile and oldStore.Profile.WasTeleporting and newStore.Profile.Stats ~= oldStore.Profile.Stats then
@@ -367,15 +367,15 @@ run(function()
 				entitylib.character.GroundPosition = entitylib.character.Humanoid.FloorMaterial ~= Enum.Material.Air and entitylib.character.RootPart.Position or entitylib.character.GroundPosition
 			end
 			task.wait()
-		until vape.Loaded == nil
+		until Kiss.Loaded == nil
 	end)
 
-	vape:Clean(workspace.BlockContainer.DescendantAdded:Connect(function(v)
+	Kiss:Clean(workspace.BlockContainer.DescendantAdded:Connect(function(v)
 		parsePositions(v, function(pos)
 			store.blocks[pos] = v
 		end)
 	end))
-	vape:Clean(workspace.BlockContainer.DescendantRemoving:Connect(function(v)
+	Kiss:Clean(workspace.BlockContainer.DescendantRemoving:Connect(function(v)
 		parsePositions(v, function(pos)
 			store.blocks[pos] = nil
 		end)
@@ -386,13 +386,13 @@ run(function()
 		end)
 	end
 
-	vape:Clean(function()
-		for _, v in vapeEvents do
+	Kiss:Clean(function()
+		for _, v in KissEvents do
 			v:Destroy()
 		end
 		table.clear(ControllerTable)
 		table.clear(RemoteTable)
-		table.clear(vapeEvents)
+		table.clear(KissEvents)
 		table.clear(skywars)
 		table.clear(store.blocks)
 		table.clear(store)
@@ -402,5 +402,5 @@ run(function()
 end)
 
 for _, v in {'Reach', 'TriggerBot', 'Disabler', 'SilentAim', 'AutoRejoin', 'Rejoin', 'ServerHop', 'MurderMystery'} do
-	vape:Remove(v)
+	Kiss:Remove(v)
 end

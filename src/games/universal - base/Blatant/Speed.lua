@@ -1,4 +1,4 @@
-local Speed
+﻿local Speed
 local Mode
 local Options
 local AutoJump
@@ -6,7 +6,7 @@ local AutoJumpCustom
 local AutoJumpValue
 local w, s, a, d = 0, 0, 0, 0
 
-Speed = vape.Categories.Blatant:CreateModule({
+Speed = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Speed',
 	Function = function(callback)
 		frictionTable.Speed = callback and CustomProperties.Enabled or nil

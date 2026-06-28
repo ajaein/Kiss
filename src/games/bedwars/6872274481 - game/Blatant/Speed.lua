@@ -1,4 +1,4 @@
-local Speed
+﻿local Speed
 local Value
 local WallCheck
 local AutoJump
@@ -6,7 +6,7 @@ local AlwaysJump
 local rayCheck = RaycastParams.new()
 rayCheck.RespectCanCollide = true
 
-Speed = vape.Categories.Blatant:CreateModule({
+Speed = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Speed',
 	Function = function(callback)
 		frictionTable.Speed = callback or nil

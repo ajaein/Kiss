@@ -1,4 +1,4 @@
-local AutoHotbar
+﻿local AutoHotbar
 local SortList = {}
 
 local function DoSorting()
@@ -22,7 +22,7 @@ local function EntityAdded()
 	DoSorting()
 end
 
-AutoHotbar = vape.Categories.Inventory:CreateModule({
+AutoHotbar = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoHotbar',
 	Function = function(callback)
 		if callback then

@@ -1,11 +1,11 @@
-local ComputerESP
+﻿local ComputerESP
 local FillColor
 local OutlineColor
 local FillTransparency
 local OutlineTransparency
 local Reference = {}
 local Folder = Instance.new('Folder')
-Folder.Parent = vape.gui
+Folder.Parent = Kiss.gui
 
 local function Added(computer)
 	local screen = computer:FindFirstChild('Screen')
@@ -28,7 +28,7 @@ end
 
 local function Removed(computer)
 	if Reference[computer] then
-		if vape.ThreadFix then
+		if Kiss.ThreadFix then
 			setthreadidentity(8)
 		end
 
@@ -56,12 +56,12 @@ local function MapAdded(map)
 	end
 end
 
-ComputerESP = vape.Categories.Render:CreateModule({
+ComputerESP = Kiss.Categories.Render:CreateModule({
 	Name = 'ComputerESP',
 	Function = function(callback)
 		if callback then
-			ComputerESP:Clean(vapeEvents.MapAdded.Event:Connect(MapAdded))
-			ComputerESP:Clean(vapeEvents.MapRemoved.Event:Connect(function()
+			ComputerESP:Clean(KissEvents.MapAdded.Event:Connect(MapAdded))
+			ComputerESP:Clean(KissEvents.MapRemoved.Event:Connect(function()
 				for _, v in Reference do
 					v:Destroy()
 				end

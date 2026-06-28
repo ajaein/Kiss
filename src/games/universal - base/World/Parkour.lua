@@ -1,6 +1,6 @@
-local Parkour
+﻿local Parkour
 
-Parkour = vape.Categories.World:CreateModule({
+Parkour = Kiss.Categories.World:CreateModule({
 	Name = 'Parkour',
 	Function = function(callback)
 		if callback then 

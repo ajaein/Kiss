@@ -1,6 +1,6 @@
-local AutoBlock
+﻿local AutoBlock
 
-AutoBlock = vape.Categories.Blatant:CreateModule({
+AutoBlock = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoBlock',
 	Function = function(callback)
 		if callback then

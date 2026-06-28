@@ -1,11 +1,11 @@
-repeat task.wait() until game:IsLoaded()
-if shared.vape then shared.vape:Uninject() end
+﻿repeat task.wait() until game:IsLoaded()
+if shared.Kiss then shared.Kiss:Uninject() end
 
-local vape
+local Kiss
 local loadstring = function(...)
 	local res, err = loadstring(...)
-	if err and vape then
-		vape:CreateNotification('Vape', 'Failed to load : '..err, 30, 'alert')
+	if err and Kiss then
+		Kiss:CreateNotification('Kiss', 'Failed to load : '..err, 30, 'alert')
 	end
 	return res
 end
@@ -24,13 +24,13 @@ local playersService = cloneref(game:GetService('Players'))
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeCompiled/'..readfile('newvape/profiles/commit.txt')..'/'..select(1, path:gsub('newvape/', '')), true)
+			return error('Github downloads disabled')..'/'..select(1, path:gsub('newKiss/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
 		end
 		if path:find('.lua') then
-			res = '--This watermark is used to delete the file if its cached, remove it to make the file persist after vape updates.\n'..res
+			res = '--This watermark is used to delete the file if its cached, remove it to make the file persist after Kiss updates.\n'..res
 		end
 		writefile(path, res)
 	end
@@ -38,73 +38,73 @@ local function downloadFile(path, func)
 end
 
 local function finishLoading()
-	vape.Init = nil
-	vape:Load()
+	Kiss.Init = nil
+	Kiss:Load()
 	task.spawn(function()
 		repeat
-			vape:Save()
+			Kiss:Save()
 			task.wait(10)
-		until not vape.Loaded
+		until not Kiss.Loaded
 	end)
 
 	local teleportedServers
-	vape:Clean(playersService.LocalPlayer.OnTeleport:Connect(function()
-		if (not teleportedServers) and (not shared.VapeIndependent) then
+	Kiss:Clean(playersService.LocalPlayer.OnTeleport:Connect(function()
+		if (not teleportedServers) and (not shared.KissIndependent) then
 			teleportedServers = true
 			local teleportScript = [[
-				shared.vapereload = true
-				if shared.VapeDeveloper then
-					loadstring(readfile('newvape/loader.lua'), 'loader')()
+				shared.Kissreload = true
+				if shared.KissDeveloper then
+					loadstring(readfile('newKiss/loader.lua'), 'loader')()
 				else
-					loadstring(game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeCompiled/'..readfile('newvape/profiles/commit.txt')..'/loader.lua', true), 'loader')()
+					loadstring(error('Github downloads disabled')..'/loader.lua', true), 'loader')()
 				end
 			]]
-			if shared.VapeDeveloper then
-				teleportScript = 'shared.VapeDeveloper = true\n'..teleportScript
+			if shared.KissDeveloper then
+				teleportScript = 'shared.KissDeveloper = true\n'..teleportScript
 			end
-			if shared.VapeCustomProfile then
-				teleportScript = 'shared.VapeCustomProfile = "'..shared.VapeCustomProfile..'"\n'..teleportScript
+			if shared.KissCustomProfile then
+				teleportScript = 'shared.KissCustomProfile = "'..shared.KissCustomProfile..'"\n'..teleportScript
 			end
-			vape:Save()
+			Kiss:Save()
 			queue_on_teleport(teleportScript)
 		end
 	end))
 
-	if not shared.vapereload then
-		if not vape.Categories then return end
-		if vape.Categories.Main.Options['GUI bind indicator'].Enabled then
-			vape:CreateNotification('Finished Loading', vape.VapeButton and 'Press the button in the top right to open GUI' or 'Press '..table.concat(vape.Keybind, ' + '):upper()..' to open GUI', 5)
+	if not shared.Kissreload then
+		if not Kiss.Categories then return end
+		if Kiss.Categories.Main.Options['GUI bind indicator'].Enabled then
+			Kiss:CreateNotification('Finished Loading', Kiss.KissButton and 'Press the button in the top right to open GUI' or 'Press '..table.concat(Kiss.Keybind, ' + '):upper()..' to open GUI', 5)
 		end
 	end
 end
 
-if not isfile('newvape/profiles/gui.txt') then
-	writefile('newvape/profiles/gui.txt', 'new')
+if not isfile('newKiss/profiles/gui.txt') then
+	writefile('newKiss/profiles/gui.txt', 'new')
 end
-local gui = readfile('newvape/profiles/gui.txt')
+local gui = readfile('newKiss/profiles/gui.txt')
 
-if not isfolder('newvape/assets/'..gui) then
-	makefolder('newvape/assets/'..gui)
+if not isfolder('newKiss/assets/'..gui) then
+	makefolder('newKiss/assets/'..gui)
 end
-vape = loadstring(downloadFile('newvape/guis/'..gui..'.lua'), 'gui')()
-shared.vape = vape
+Kiss = loadstring(downloadFile('newKiss/guis/'..gui..'.lua'), 'gui')()
+shared.Kiss = Kiss
 
-if not shared.VapeIndependent then
-	loadstring(downloadFile('newvape/games/universal.lua'), 'universal')()
-	if isfile('newvape/games/'..game.PlaceId..'.lua') then
-		loadstring(readfile('newvape/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
+if not shared.KissIndependent then
+	loadstring(downloadFile('newKiss/games/universal.lua'), 'universal')()
+	if isfile('newKiss/games/'..game.PlaceId..'.lua') then
+		loadstring(readfile('newKiss/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
 	else
-		if not shared.VapeDeveloper then
+		if not shared.KissDeveloper then
 			local suc, res = pcall(function()
-				return game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeCompiled/'..readfile('newvape/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true)
+				return error('Github downloads disabled')..'/games/'..game.PlaceId..'.lua', true)
 			end)
 			if suc and res ~= '404: Not Found' then
-				loadstring(downloadFile('newvape/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
+				loadstring(downloadFile('newKiss/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
 			end
 		end
 	end
 	finishLoading()
 else
-	vape.Init = finishLoading
-	return vape
+	Kiss.Init = finishLoading
+	return Kiss
 end

@@ -1,7 +1,7 @@
-local AutoVoidDrop
+﻿local AutoVoidDrop
 local OwlCheck
 
-AutoVoidDrop = vape.Categories.Utility:CreateModule({
+AutoVoidDrop = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoVoidDrop',
 	Function = function(callback)
 		if callback then

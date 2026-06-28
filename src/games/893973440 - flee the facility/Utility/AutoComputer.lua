@@ -1,4 +1,4 @@
-local AutoComputer
+﻿local AutoComputer
 local connection, old
 
 local function getConnection(event)
@@ -14,7 +14,7 @@ local function getConnection(event)
 end
 
 
-AutoComputer = vape.Categories.Utility:CreateModule({
+AutoComputer = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoComputer',
 	Function = function(callback)
 		if callback then

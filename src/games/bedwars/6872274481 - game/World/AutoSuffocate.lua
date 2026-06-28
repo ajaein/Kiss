@@ -1,4 +1,4 @@
-local AutoSuffocate
+﻿local AutoSuffocate
 local Range
 local LimitItem
 
@@ -6,7 +6,7 @@ local function fixPosition(pos)
 	return bedwars.BlockController:getBlockPosition(pos) * 3
 end
 
-AutoSuffocate = vape.Categories.World:CreateModule({
+AutoSuffocate = Kiss.Categories.World:CreateModule({
 	Name = 'AutoSuffocate',
 	Function = function(callback)
 		if callback then

@@ -1,11 +1,11 @@
---[[
+﻿--[[
 	Grabbing an accurate count of the current framerate
 	Source: https://devforum.roblox.com/t/get-client-FPS-trough-a-script/282631
 ]]
 local FPS
 local label
 
-FPS = vape.Legit:CreateModule({
+FPS = Kiss.Legit:CreateModule({
 	Name = 'FPS',
 	Function = function(callback)
 		if callback then

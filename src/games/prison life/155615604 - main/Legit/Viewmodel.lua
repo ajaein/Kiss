@@ -1,4 +1,4 @@
-local Viewmodel
+﻿local Viewmodel
 local Depth
 local Horizontal
 local Vertical
@@ -64,7 +64,7 @@ local function EntityAdded(ent)
 	ToolAdded(ent.Character:FindFirstChildWhichIsA('Tool'))
 end
 
-Viewmodel = vape.Legit:CreateModule({
+Viewmodel = Kiss.Legit:CreateModule({
 	Name = 'Viewmodel',
 	Function = function(callback)
 		if callback then

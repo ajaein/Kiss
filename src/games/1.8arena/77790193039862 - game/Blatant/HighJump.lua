@@ -1,4 +1,4 @@
-local HighJump
+﻿local HighJump
 local Value
 local AutoDisable
 
@@ -10,7 +10,7 @@ local function jump()
 	end
 end
 
-HighJump = vape.Categories.Blatant:CreateModule({
+HighJump = Kiss.Categories.Blatant:CreateModule({
 	Name = 'HighJump',
 	Function = function(callback)
 		if callback then

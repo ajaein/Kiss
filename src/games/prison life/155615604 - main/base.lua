@@ -1,10 +1,10 @@
-local run = function(func)
+﻿local run = function(func)
 	func()
 end
 local cloneref = cloneref or function(obj)
 	return obj
 end
-local vapeEvents = setmetatable({}, {
+local KissEvents = setmetatable({}, {
 	__index = function(self, index)
 		self[index] = Instance.new('BindableEvent')
 		return self[index]
@@ -26,12 +26,12 @@ local coreGui = cloneref(game:GetService('CoreGui'))
 
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local whitelist = vape.Libraries.whitelist
-local targetinfo = vape.Libraries.targetinfo
-local sessioninfo = vape.Libraries.sessioninfo
-local getfontsize = vape.Libraries.getfontsize
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local whitelist = Kiss.Libraries.whitelist
+local targetinfo = Kiss.Libraries.targetinfo
+local sessioninfo = Kiss.Libraries.sessioninfo
+local getfontsize = Kiss.Libraries.getfontsize
 
 local pl = {}
 local Spring = {}
@@ -66,14 +66,14 @@ local function canClick()
 			return false
 		end
 	end
-	return (not vape.gui.ScaledGui.ClickGui.Visible) and (not inputService:GetFocusedTextBox())
+	return (not Kiss.gui.ScaledGui.ClickGui.Visible) and (not inputService:GetFocusedTextBox())
 end
 
 local function isFriend(plr, recolor)
-	if vape.Categories.Friends.Options['Use friends'].Enabled then
-		local friend = table.find(vape.Categories.Friends.ListEnabled, plr.Name) and true
+	if Kiss.Categories.Friends.Options['Use friends'].Enabled then
+		local friend = table.find(Kiss.Categories.Friends.ListEnabled, plr.Name) and true
 		if recolor then
-			friend = friend and vape.Categories.Friends.Options['Recolor visuals'].Enabled
+			friend = friend and Kiss.Categories.Friends.Options['Recolor visuals'].Enabled
 		end
 		return friend
 	end
@@ -81,11 +81,11 @@ local function isFriend(plr, recolor)
 end
 
 local function isTarget(plr)
-	return (table.find(vape.Categories.Targets.ListEnabled, plr.Name) or tempTargets[plr.Name]) and true
+	return (table.find(Kiss.Categories.Targets.ListEnabled, plr.Name) or tempTargets[plr.Name]) and true
 end
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 local function removeTags(str)
@@ -219,7 +219,7 @@ run(function()
 
 		if flags[flagtype] > limit then
 			CheatFlags.Flagged[plr.UserId] = true
-			vapeEvents.CheatFlagged:Fire(plr, flagtype)
+			KissEvents.CheatFlagged:Fire(plr, flagtype)
 		end
 	end
 
@@ -262,7 +262,7 @@ run(function()
 		if ent.NPC then return true end
 		if isFriend(ent.Player) then return false end
 		if not select(2, whitelist:get(ent.Player)) then return false end
-		if vape.Categories.Main.Options['Teams by server'].Enabled then
+		if Kiss.Categories.Main.Options['Teams by server'].Enabled then
 			return lplr.Team ~= ent.Player.Team and ent.Player.Team ~= teams.Neutral
 		end
 		return true
@@ -385,9 +385,9 @@ run(function()
 	end
 
 	entitylib.getEntityColor = function(ent)
-		if not (ent.Player and vape.Categories.Main.Options['Use team color'].Enabled) then return end
+		if not (ent.Player and Kiss.Categories.Main.Options['Use team color'].Enabled) then return end
 		if isFriend(ent.Player, true) then
-			return Color3.fromHSV(vape.Categories.Friends.Options['Friends color'].Hue, vape.Categories.Friends.Options['Friends color'].Sat, vape.Categories.Friends.Options['Friends color'].Value)
+			return Color3.fromHSV(Kiss.Categories.Friends.Options['Friends color'].Hue, Kiss.Categories.Friends.Options['Friends color'].Sat, Kiss.Categories.Friends.Options['Friends color'].Value)
 		end
 
 		local color = tostring(ent.Player.TeamColor) ~= 'White' and ent.Player.TeamColor.Color or nil
@@ -416,7 +416,7 @@ run(function()
 
 	local gui = lplr.PlayerGui:WaitForChild('Home', 10)
 	gui = gui and gui.hud.ActionArea
-	if vape.Loaded == nil then
+	if Kiss.Loaded == nil then
 		return
 	end
 
@@ -450,9 +450,9 @@ run(function()
 		repeat
 			getShootFunction()
 			task.wait()
-		until pl.Bullet and pl.SwitchTable or vape.Loaded == nil
+		until pl.Bullet and pl.SwitchTable or Kiss.Loaded == nil
 
-		if vape.Loaded == nil then
+		if Kiss.Loaded == nil then
 			table.clear(pl)
 		end
 	end
@@ -472,7 +472,7 @@ run(function()
 		return text
 	end, false)
 
-	vape:Clean(replicatedStorage.Killfeed.ChildAdded:Connect(function(obj)
+	Kiss:Clean(replicatedStorage.Killfeed.ChildAdded:Connect(function(obj)
 		local names = {}
 
 		-- killer
@@ -485,7 +485,7 @@ run(function()
 		endchar = obj.Name:find(' ', start)
 		table.insert(names, obj.Name:sub(start, endchar - 1))
 
-		vapeEvents.PlayerKill:Fire(unpack(names))
+		KissEvents.PlayerKill:Fire(unpack(names))
 		if names[1] == lplr.Name then
 			kills:Increment()
 		elseif names[2] == lplr.Name then
@@ -493,20 +493,20 @@ run(function()
 		end
 	end))
 
-	vape:Clean(vapeEvents.Arrested.Event:Connect(function()
+	Kiss:Clean(KissEvents.Arrested.Event:Connect(function()
 		arrests:Increment()
 	end))
 
-	vape:Clean(replicatedStorage.Remotes.MessageReceived.OnClientEvent:Connect(function(msg)
+	Kiss:Clean(replicatedStorage.Remotes.MessageReceived.OnClientEvent:Connect(function(msg)
 		if msg:find('kicked') then
 			cheaterkicked:Increment()
-			vapeEvents.CheaterKicked:Fire(msg:sub(1, msg:find(' ')))
+			KissEvents.CheaterKicked:Fire(msg:sub(1, msg:find(' ')))
 		end
 	end))
 
-	vape:Clean(entitylib.Events.EntityUpdated:Connect(function(ent)
+	Kiss:Clean(entitylib.Events.EntityUpdated:Connect(function(ent)
 		if ent.Player and ent.Player.Team == teams.Inmates then
-			vape.Categories.Friends.ColorUpdate:Fire()
+			Kiss.Categories.Friends.ColorUpdate:Fire()
 		end
 	end))
 
@@ -547,16 +547,16 @@ run(function()
 
 	OriginScanner:UpdateIgnore()
 	for _, v in {'EntityAdded', 'LocalAdded'} do
-		vape:Clean(entitylib.Events[v]:Connect(function()
+		Kiss:Clean(entitylib.Events[v]:Connect(function()
 			OriginScanner:UpdateIgnore()
 		end))
 	end
 
-	vape:Clean(runService.RenderStepped:Connect(function()
+	Kiss:Clean(runService.RenderStepped:Connect(function()
 		table.clear(OriginScanner.Cache)
 	end))
 
-	vape:Clean(function()
+	Kiss:Clean(function()
 		table.clear(pl)
 	end)
 end)
@@ -681,5 +681,5 @@ do
 end
 
 for _, v in {'Reach', 'Jesus', 'MurderMystery'} do
-	vape:Remove(v)
+	Kiss:Remove(v)
 end

@@ -1,11 +1,11 @@
-local Mode
+﻿local Mode
 local Value
 local State
 local rayCheck = RaycastParams.new()
 rayCheck.RespectCanCollide = true
 local Active, Truss
 
-Spider = vape.Categories.Blatant:CreateModule({
+Spider = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Spider',
 	Function = function(callback)
 		if callback then

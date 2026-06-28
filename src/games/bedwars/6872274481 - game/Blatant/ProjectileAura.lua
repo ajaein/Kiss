@@ -1,4 +1,4 @@
-local ProjectileAura
+﻿local ProjectileAura
 local Targets
 local Range
 local List
@@ -35,7 +35,7 @@ local function getProjectiles()
 	return items
 end
 
-ProjectileAura = vape.Categories.Blatant:CreateModule({
+ProjectileAura = Kiss.Categories.Blatant:CreateModule({
 	Name = 'ProjectileAura',
 	Function = function(callback)
 		if callback then

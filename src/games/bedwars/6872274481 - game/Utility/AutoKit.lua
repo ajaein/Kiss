@@ -1,4 +1,4 @@
-local AutoKit
+﻿local AutoKit
 local Legit
 local Toggles = {}
 
@@ -82,7 +82,7 @@ local AutoKitFunctions = {
 	cat = function()
 		local old = bedwars.CatController.leap
 		bedwars.CatController.leap = function(...)
-			vapeEvents.CatPounce:Fire()
+			KissEvents.CatPounce:Fire()
 			return old(...)
 		end
 
@@ -346,7 +346,7 @@ local AutoKitFunctions = {
 	end
 }
 
-AutoKit = vape.Categories.Utility:CreateModule({
+AutoKit = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoKit',
 	Function = function(callback)
 		if callback then

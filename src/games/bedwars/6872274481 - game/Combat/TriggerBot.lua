@@ -1,8 +1,8 @@
-local TriggerBot
+﻿local TriggerBot
 local CPS
 local rayParams = RaycastParams.new()
 
-TriggerBot = vape.Categories.Combat:CreateModule({
+TriggerBot = Kiss.Categories.Combat:CreateModule({
 	Name = 'TriggerBot',
 	Function = function(callback)
 		if callback then

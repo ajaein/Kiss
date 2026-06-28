@@ -1,6 +1,6 @@
-local MissileTP
+﻿local MissileTP
 
-MissileTP = vape.Categories.Utility:CreateModule({
+MissileTP = Kiss.Categories.Utility:CreateModule({
 	Name = 'MissileTP',
 	Function = function(callback)
 		if callback then

@@ -1,4 +1,4 @@
-local BulletTracers
+﻿local BulletTracers
 local Material
 local Color
 local Lifetime
@@ -6,7 +6,7 @@ local Fade
 local DrawingToggle
 local drawingobjs = {}
 
-BulletTracers = vape.Legit:CreateModule({
+BulletTracers = Kiss.Legit:CreateModule({
 	Name = 'BulletTracers',
 	Function = function(callback)
 		if callback then 

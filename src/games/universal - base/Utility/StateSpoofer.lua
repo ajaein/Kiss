@@ -1,8 +1,8 @@
-local StateSpoofer
+﻿local StateSpoofer
 local State
 local hook
 
-StateSpoofer = vape.Categories.Utility:CreateModule({
+StateSpoofer = Kiss.Categories.Utility:CreateModule({
 	Name = 'StateSpoofer',
 	Function = function(callback)
 		if callback then

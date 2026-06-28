@@ -1,4 +1,4 @@
-local Killaura
+﻿local Killaura
 local Targets
 local AttackRange
 local AngleSlider
@@ -23,7 +23,7 @@ local function getAttackData()
 	return true
 end
 
-Killaura = vape.Categories.Blatant:CreateModule({
+Killaura = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Killaura',
 	Function = function(callback)
 		if callback then
@@ -131,7 +131,7 @@ Killaura:CreateToggle({
 				box.Size = Vector3.new(3, 5, 3)
 				box.CFrame = CFrame.new(0, -0.5, 0)
 				box.ZIndex = 0
-				box.Parent = vape.gui
+				box.Parent = Kiss.gui
 				Boxes[i] = box
 			end
 		else

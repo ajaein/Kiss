@@ -1,4 +1,4 @@
-local AutoTool
+﻿local AutoTool
 local old, event
 
 local function switchHotbarItem(block)
@@ -19,7 +19,7 @@ local function switchHotbarItem(block)
 	end
 end
 
-AutoTool = vape.Categories.World:CreateModule({
+AutoTool = Kiss.Categories.World:CreateModule({
 	Name = 'AutoTool',
 	Function = function(callback)
 		if callback then

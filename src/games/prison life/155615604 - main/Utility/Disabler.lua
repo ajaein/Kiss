@@ -1,4 +1,4 @@
-local Disabler
+﻿local Disabler
 local old
 
 local function EntityAdded(ent)
@@ -10,7 +10,7 @@ local function EntityAdded(ent)
 	end)
 end
 
-Disabler = vape.Categories.Utility:CreateModule({
+Disabler = Kiss.Categories.Utility:CreateModule({
 	Name = 'Disabler',
 	Function = function(callback)
 		if callback then

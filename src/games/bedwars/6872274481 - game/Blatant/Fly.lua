@@ -1,4 +1,4 @@
-local Fly
+﻿local Fly
 local LongJump
 run(function()
 	local Value
@@ -10,7 +10,7 @@ run(function()
 	rayCheck.RespectCanCollide = true
 	local up, down, old = 0, 0
 
-	Fly = vape.Categories.Blatant:CreateModule({
+	Fly = Kiss.Categories.Blatant:CreateModule({
 		Name = 'Fly',
 		Function = function(callback)
 			frictionTable.Fly = callback or nil
@@ -23,7 +23,7 @@ run(function()
 				if lplr.Character and (lplr.Character:GetAttribute('InflatedBalloons') or 0) == 0 and getItem('balloon') then
 					bedwars.BalloonController:inflateBalloon()
 				end
-				Fly:Clean(vapeEvents.AttributeChanged.Event:Connect(function(changed)
+				Fly:Clean(KissEvents.AttributeChanged.Event:Connect(function(changed)
 					if changed == 'InflatedBalloons' and (lplr.Character:GetAttribute('InflatedBalloons') or 0) == 0 and getItem('balloon') then
 						bedwars.BalloonController:inflateBalloon()
 					end

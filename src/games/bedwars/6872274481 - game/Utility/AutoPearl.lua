@@ -1,4 +1,4 @@
-local AutoPearl
+﻿local AutoPearl
 local rayCheck = RaycastParams.new()
 rayCheck.RespectCanCollide = true
 local projectileRemote = {InvokeServer = function() end}
@@ -22,7 +22,7 @@ local function firePearl(pos, spot, item)
 	end
 end
 
-AutoPearl = vape.Categories.Utility:CreateModule({
+AutoPearl = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoPearl',
 	Function = function(callback)
 		if callback then

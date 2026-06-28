@@ -1,4 +1,4 @@
-local GunModifications
+﻿local GunModifications
 local Spread
 local FireRate
 local Automatic
@@ -20,7 +20,7 @@ local function Modify()
 end
 
 
-GunModifications = vape.Categories.Blatant:CreateModule({
+GunModifications = Kiss.Categories.Blatant:CreateModule({
 	Name = 'GunModifications',
 	Function = function(callback)
 		if callback then

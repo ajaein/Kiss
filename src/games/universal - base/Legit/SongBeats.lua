@@ -1,4 +1,4 @@
-local SongBeats
+﻿local SongBeats
 local List
 local FOV
 local FOVValue = {}
@@ -47,7 +47,7 @@ local function choosesong()
 	end
 end
 
-SongBeats = vape.Legit:CreateModule({
+SongBeats = Kiss.Legit:CreateModule({
 	Name = 'Song Beats',
 	Function = function(callback)
 		if callback then

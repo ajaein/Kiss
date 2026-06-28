@@ -1,6 +1,6 @@
-local AutoReset
+﻿local AutoReset
 
-AutoReset = vape.Categories.Blatant:CreateModule({
+AutoReset = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoReset',
 	Function = function(callback)
 		if callback then

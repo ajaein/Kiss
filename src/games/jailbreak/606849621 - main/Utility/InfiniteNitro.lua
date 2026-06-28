@@ -1,7 +1,7 @@
-local nitrotable = debug.getupvalue(jb.VehicleController.NitroShopVisible, 1)
+﻿local nitrotable = debug.getupvalue(jb.VehicleController.NitroShopVisible, 1)
 local oldnitro
 
-InfNitro = vape.Categories.Utility:CreateModule({
+InfNitro = Kiss.Categories.Utility:CreateModule({
 	Name = 'InfiniteNitro',
 	Function = function(callback)
 		if callback then

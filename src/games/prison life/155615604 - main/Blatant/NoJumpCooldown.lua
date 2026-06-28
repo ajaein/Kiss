@@ -1,4 +1,4 @@
-local NoJumpCooldown
+﻿local NoJumpCooldown
 local old
 
 local function EntityAdded(ent)
@@ -19,7 +19,7 @@ local function EntityAdded(ent)
 	end
 end
 
-NoJumpCooldown = vape.Categories.Blatant:CreateModule({
+NoJumpCooldown = Kiss.Categories.Blatant:CreateModule({
 	Name = 'NoJumpCooldown',
 	Function = function(callback)
 		if callback then

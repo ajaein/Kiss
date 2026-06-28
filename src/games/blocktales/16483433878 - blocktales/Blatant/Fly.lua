@@ -1,11 +1,11 @@
-local Fly
+﻿local Fly
 local LongJump
 run(function()
 	local Value
 	local VerticalValue
 	local up, down = 0, 0, 0, 0, 0, 0
 
-	Fly = vape.Categories.Blatant:CreateModule({
+	Fly = Kiss.Categories.Blatant:CreateModule({
 		Name = 'Fly',
 		Function = function(callback)
 			if callback then

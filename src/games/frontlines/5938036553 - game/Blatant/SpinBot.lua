@@ -1,4 +1,4 @@
-local SpinBot
+﻿local SpinBot
 local Speed
 local Yaw
 local Pitch
@@ -9,7 +9,7 @@ for i = 1, 40 do
 	table.insert(aimtable, Vector3.zero)
 end
 
-SpinBot = vape.Categories.Blatant:CreateModule({
+SpinBot = Kiss.Categories.Blatant:CreateModule({
 	Name = 'SpinBot',
 	Function = function(callback)
 		if callback then

@@ -1,6 +1,6 @@
-local SpamBeast
+﻿local SpamBeast
 
-SpamBeast = vape.Categories.Blatant:CreateModule({
+SpamBeast = Kiss.Categories.Blatant:CreateModule({
 	Name = 'SpamBeast',
 	Function = function(callback)
 		if callback then

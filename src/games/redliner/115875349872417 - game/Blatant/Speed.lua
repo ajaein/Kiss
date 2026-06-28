@@ -1,10 +1,10 @@
-local Speed
+﻿local Speed
 local Value
 local AutoJump
 local AutoJumpCustom
 local AutoJumpValue
 
-Speed = vape.Categories.Blatant:CreateModule({
+Speed = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Speed',
 	Function = function(callback)
 		if callback then

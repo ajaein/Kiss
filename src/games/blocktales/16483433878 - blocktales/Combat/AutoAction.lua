@@ -1,4 +1,4 @@
-local AutoAction
+﻿local AutoAction
 local Attack
 local Block
 local actions = {
@@ -66,7 +66,7 @@ local function isMyTurn()
 	return false
 end
 
-AutoAction = vape.Categories.Combat:CreateModule({
+AutoAction = Kiss.Categories.Combat:CreateModule({
 	Name = 'AutoAction',
 	Function = function(callback)
 		if callback then

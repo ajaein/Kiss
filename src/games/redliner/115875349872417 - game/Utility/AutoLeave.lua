@@ -1,11 +1,11 @@
-local AutoLeave
+﻿local AutoLeave
 local Delay
 
-AutoLeave = vape.Categories.Utility:CreateModule({
+AutoLeave = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoLeave',
 	Function = function(callback)
 		if callback then
-			AutoLeave:Clean(vapeEvents.MatchEnded.Event:Connect(function(_, obj)
+			AutoLeave:Clean(KissEvents.MatchEnded.Event:Connect(function(_, obj)
 				task.delay(Delay.Value, function()
 					firesignal(obj.Main.Actions.returnbutton.MouseButton1Click)
 				end)

@@ -1,4 +1,4 @@
-local AlwaysStun
+﻿local AlwaysStun
 local Spoof
 local oldsend, oldrepl, oldbuf
 
@@ -57,7 +57,7 @@ local function AddHook()
 	end)
 end
 
-AlwaysStun = vape.Categories.Blatant:CreateModule({
+AlwaysStun = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AlwaysStun',
 	Function = function(callback)
 		if callback then

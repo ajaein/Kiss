@@ -1,4 +1,4 @@
-local TargetStrafe
+﻿local TargetStrafe
 local Targets
 local SearchRange
 local StrafeRange
@@ -7,11 +7,11 @@ local rayCheck = RaycastParams.new()
 rayCheck.FilterDescendantsInstances = {workspace.Map}
 rayCheck.FilterType = Enum.RaycastFilterType.Include
 
-TargetStrafe = vape.Categories.Blatant:CreateModule({
+TargetStrafe = Kiss.Categories.Blatant:CreateModule({
 	Name = 'TargetStrafe',
 	Function = function(callback)
 		if callback then
-			local flymod, ang, oldent = vape.Modules.Fly or {Enabled = false}
+			local flymod, ang, oldent = Kiss.Modules.Fly or {Enabled = false}
 			TargetStrafe:Clean(runService.PreSimulation:Connect(function()
 				local vec
 				local wallcheck = Targets.Walls.Enabled

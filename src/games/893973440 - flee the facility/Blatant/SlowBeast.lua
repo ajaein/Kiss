@@ -1,6 +1,6 @@
-local SlowBeast
+﻿local SlowBeast
 
-SlowBeast = vape.Categories.Blatant:CreateModule({
+SlowBeast = Kiss.Categories.Blatant:CreateModule({
 	Name = 'SlowBeast',
 	Function = function(callback)
 		if callback then

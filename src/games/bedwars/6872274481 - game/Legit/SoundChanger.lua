@@ -1,9 +1,9 @@
-local SoundChanger
+﻿local SoundChanger
 local List
 local soundlist = {}
 local old
 
-SoundChanger = vape.Legit:CreateModule({
+SoundChanger = Kiss.Legit:CreateModule({
 	Name = 'SoundChanger',
 	Function = function(callback)
 		if callback then

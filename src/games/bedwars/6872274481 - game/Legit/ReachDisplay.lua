@@ -1,7 +1,7 @@
-local ReachDisplay
+﻿local ReachDisplay
 local label
 
-ReachDisplay = vape.Legit:CreateModule({
+ReachDisplay = Kiss.Legit:CreateModule({
 	Name = 'Reach Display',
 	Function = function(callback)
 		if callback then

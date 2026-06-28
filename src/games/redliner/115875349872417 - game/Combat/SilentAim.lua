@@ -1,4 +1,4 @@
-local SilentAim
+﻿local SilentAim
 local Target
 local Range
 local HitChance
@@ -26,7 +26,7 @@ local function Hook(...)
 	return old(...)
 end
 
-SilentAim = vape.Categories.Combat:CreateModule({
+SilentAim = Kiss.Categories.Combat:CreateModule({
 	Name = 'SilentAim',
 	Function = function(callback)
 		if callback then
@@ -86,7 +86,7 @@ SilentAim:CreateToggle({
 			CircleObject = Drawing.new('Circle')
 			CircleObject.Filled = CircleFilled.Enabled
 			CircleObject.Color = Color3.fromHSV(CircleColor.Hue, CircleColor.Sat, CircleColor.Value)
-			CircleObject.Position = vape.gui.AbsoluteSize / 2
+			CircleObject.Position = Kiss.gui.AbsoluteSize / 2
 			CircleObject.Radius = Range.Value
 			CircleObject.NumSides = 100
 			CircleObject.Transparency = 1 - CircleTransparency.Value

@@ -1,4 +1,4 @@
-local Disguise
+﻿local Disguise
 local Mode
 local IDBox
 local desc
@@ -145,7 +145,7 @@ local function characterAdded(char)
 	end
 end
 
-Disguise = vape.Legit:CreateModule({
+Disguise = Kiss.Legit:CreateModule({
 	Name = 'Disguise',
 	Function = function(callback)
 		if callback then

@@ -1,7 +1,7 @@
-local AutoTaze
+﻿local AutoTaze
 local HandCheck
 
-AutoTaze = vape.Categories.Blatant:CreateModule({
+AutoTaze = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoTaze',
 	Function = function(callback)
 		if callback then

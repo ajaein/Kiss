@@ -1,4 +1,4 @@
-local Fly
+﻿local Fly
 local LongJump
 run(function()
 	local Options = {TPTiming = tick()}
@@ -86,7 +86,7 @@ run(function()
 		end
 	}
 
-	Fly = vape.Categories.Blatant:CreateModule({
+	Fly = Kiss.Categories.Blatant:CreateModule({
 		Name = 'Fly',
 		Function = function(callback)
 			if Platform then

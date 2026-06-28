@@ -1,4 +1,4 @@
-local AntiInvisible
+﻿local AntiInvisible
 local threads = {}
 local whitelist = {
 	-- default roblox animations
@@ -81,7 +81,7 @@ for _, v in replicatedStorage:QueryDescendants('Animation') do
 	whitelist[v.AnimationId] = true
 end
 
-AntiInvisible = vape.Categories.Blatant:CreateModule({
+AntiInvisible = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiInvisible',
 	Function = function(callback)
 		if callback then

@@ -1,4 +1,4 @@
-local UICleanup
+﻿local UICleanup
 local OpenInv
 local KillFeed
 local OldTabList
@@ -7,7 +7,7 @@ local HotbarOpenInventory = require(lplr.PlayerScripts.TS.controllers.global.hot
 local old, new = {}, {}
 local oldkillfeed
 
-vape:Clean(function()
+Kiss:Clean(function()
 	for _, v in new do
 		table.clear(v)
 	end
@@ -39,7 +39,7 @@ local function modifyconstant(func, ind, val)
 	end
 end
 
-UICleanup = vape.Legit:CreateModule({
+UICleanup = Kiss.Legit:CreateModule({
 	Name = 'UI Cleanup',
 	Function = function(callback)
 		for i, v in (callback and new or old) do

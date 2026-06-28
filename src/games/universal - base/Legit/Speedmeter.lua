@@ -1,7 +1,7 @@
-local Speedmeter
+﻿local Speedmeter
 local label
 
-Speedmeter = vape.Legit:CreateModule({
+Speedmeter = Kiss.Legit:CreateModule({
 	Name = 'Speedmeter',
 	Function = function(callback)
 		if callback then

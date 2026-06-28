@@ -1,10 +1,10 @@
-local Reload
+﻿local Reload
 local Recoil
 local Spread
 local FireRate
 local Automatic
 
-GunModifications = vape.Categories.Blatant:CreateModule({
+GunModifications = Kiss.Categories.Blatant:CreateModule({
 	Name = 'GunModifications',
 	Function = function(callback)
 		if callback then

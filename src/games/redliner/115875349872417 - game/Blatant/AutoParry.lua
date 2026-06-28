@@ -1,6 +1,6 @@
-local AutoParry
+﻿local AutoParry
 
-AutoParry = vape.Categories.Blatant:CreateModule({
+AutoParry = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoParry',
 	Function = function(callback)
 		if callback then

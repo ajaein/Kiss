@@ -1,7 +1,7 @@
-local AntiHazard
+﻿local AntiHazard
 local old
 
-AntiHazard = vape.Categories.Blatant:CreateModule({
+AntiHazard = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiHazard',
 	Function = function(callback)
 		if callback then

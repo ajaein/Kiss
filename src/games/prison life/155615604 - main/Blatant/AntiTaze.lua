@@ -1,4 +1,4 @@
-local AntiTaze
+﻿local AntiTaze
 local old, connection
 
 local function EntityAdded(ent)
@@ -26,7 +26,7 @@ local function EntityAdded(ent)
 	end
 end
 
-AntiTaze = vape.Categories.Blatant:CreateModule({
+AntiTaze = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiTaze',
 	Function = function(callback)
 		if callback then

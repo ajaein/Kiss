@@ -1,4 +1,4 @@
-local ChestSteal
+﻿local ChestSteal
 local Range
 local Open
 local Skywars
@@ -25,7 +25,7 @@ local function lootChest(chest)
 	end
 end
 
-ChestSteal = vape.Categories.World:CreateModule({
+ChestSteal = Kiss.Categories.World:CreateModule({
 	Name = 'ChestSteal',
 	Function = function(callback)
 		if callback then

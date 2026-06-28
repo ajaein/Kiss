@@ -1,6 +1,6 @@
-local AntiKillPlane
+﻿local AntiKillPlane
 
-AntiKillPlane = vape.Categories.Blatant:CreateModule({
+AntiKillPlane = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiKillPlane',
 	Function = function(callback)
 		if callback then

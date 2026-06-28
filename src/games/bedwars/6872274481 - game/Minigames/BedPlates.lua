@@ -1,9 +1,9 @@
-local BedPlates
+﻿local BedPlates
 local Background
 local Color = {}
 local Reference = {}
 local Folder = Instance.new('Folder')
-Folder.Parent = vape.gui
+Folder.Parent = Kiss.gui
 
 local function scanSide(self, start, tab)
 	for _, side in sides do
@@ -83,15 +83,15 @@ local function refreshNear(data)
 	end
 end
 
-BedPlates = vape.Categories.Minigames:CreateModule({
+BedPlates = Kiss.Categories.Minigames:CreateModule({
 	Name = 'BedPlates',
 	Function = function(callback)
 		if callback then
 			for _, v in collectionService:GetTagged('bed') do 
 				task.spawn(Added, v) 
 			end
-			BedPlates:Clean(vapeEvents.PlaceBlockEvent.Event:Connect(refreshNear))
-			BedPlates:Clean(vapeEvents.BreakBlockEvent.Event:Connect(refreshNear))
+			BedPlates:Clean(KissEvents.PlaceBlockEvent.Event:Connect(refreshNear))
+			BedPlates:Clean(KissEvents.BreakBlockEvent.Event:Connect(refreshNear))
 			BedPlates:Clean(collectionService:GetInstanceAddedSignal('bed'):Connect(Added))
 			BedPlates:Clean(collectionService:GetInstanceRemovedSignal('bed'):Connect(function(v)
 				if Reference[v] then

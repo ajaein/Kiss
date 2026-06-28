@@ -1,4 +1,4 @@
-local AutoPickup
+﻿local AutoPickup
 local Lists = {}
 local items = {}
 local sortedpickups = {Guard = {}, Prisoner = {}, Criminal = {}}
@@ -9,7 +9,7 @@ local function AddPickup(obj)
 	end
 end
 
-AutoPickup = vape.Categories.Inventory:CreateModule({
+AutoPickup = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoPickup',
 	Function = function(callback)
 		if callback then

@@ -1,10 +1,10 @@
-local HitSound
+﻿local HitSound
 local Value
 local Volume
 local PitchShift
 local old, sounds = nil, {}
 
-HitSound = vape.Legit:CreateModule({
+HitSound = Kiss.Legit:CreateModule({
 	Name = 'HitSound',
 	Function = function(callback)
 		if callback then

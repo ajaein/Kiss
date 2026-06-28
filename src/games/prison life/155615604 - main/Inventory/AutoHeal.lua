@@ -1,11 +1,11 @@
-local AutoHeal
+﻿local AutoHeal
 local healItems = {
 	Breakfast = true,
 	Lunch = true,
 	Dinner = true
 }
 
-AutoHeal = vape.Categories.Inventory:CreateModule({
+AutoHeal = Kiss.Categories.Inventory:CreateModule({
 	Name = 'AutoHeal',
 	Function = function(callback)
 		if callback then

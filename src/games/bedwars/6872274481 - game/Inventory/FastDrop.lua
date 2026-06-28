@@ -1,6 +1,6 @@
-local FastDrop
+﻿local FastDrop
 
-FastDrop = vape.Categories.Inventory:CreateModule({
+FastDrop = Kiss.Categories.Inventory:CreateModule({
 	Name = 'FastDrop',
 	Function = function(callback)
 		if callback then

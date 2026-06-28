@@ -1,7 +1,7 @@
-local old
+﻿local old
 local Image
 
-local Crosshair = vape.Legit:CreateModule({
+local Crosshair = Kiss.Legit:CreateModule({
 	Name = 'Crosshair',
 	Function = function(callback)
 		if callback then

@@ -1,4 +1,4 @@
-local Fullbright
+﻿local Fullbright
 local Mode
 local oldsettings = {}
 local flag
@@ -16,7 +16,7 @@ local function ChangeLighting(prop)
 	flag = false
 end
 
-Fullbright = vape.Categories.Render:CreateModule({
+Fullbright = Kiss.Categories.Render:CreateModule({
 	Name = 'Fullbright',
 	Function = function(callback)
 		if callback then

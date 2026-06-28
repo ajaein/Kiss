@@ -1,6 +1,6 @@
-local old, oldcheck
+﻿local old, oldcheck
 
-vape.Categories.Blatant:CreateModule({
+Kiss.Categories.Blatant:CreateModule({
 	Name = 'NoSlowdown',
 	Function = function(callback)
 		if callback then

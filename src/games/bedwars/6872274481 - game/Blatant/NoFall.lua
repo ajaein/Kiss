@@ -1,4 +1,4 @@
-local NoFall
+﻿local NoFall
 local Mode
 local rayParams = RaycastParams.new()
 local groundHit
@@ -6,7 +6,7 @@ task.spawn(function()
 	groundHit = bedwars.Client:Get(remotes.GroundHit).instance
 end)
 
-NoFall = vape.Categories.Blatant:CreateModule({
+NoFall = Kiss.Categories.Blatant:CreateModule({
 	Name = 'NoFall',
 	Function = function(callback)
 		if callback then

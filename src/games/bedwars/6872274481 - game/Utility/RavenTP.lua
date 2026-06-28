@@ -1,6 +1,6 @@
-local RavenTP
+﻿local RavenTP
 
-RavenTP = vape.Categories.Utility:CreateModule({
+RavenTP = Kiss.Categories.Utility:CreateModule({
 	Name = 'RavenTP',
 	Function = function(callback)
 		if callback then

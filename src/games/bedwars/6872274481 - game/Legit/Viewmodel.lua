@@ -1,4 +1,4 @@
-local Viewmodel
+﻿local Viewmodel
 local Depth
 local Horizontal
 local Vertical
@@ -6,7 +6,7 @@ local NoBob
 local Rots = {}
 local old, oldc1
 
-Viewmodel = vape.Legit:CreateModule({
+Viewmodel = Kiss.Legit:CreateModule({
 	Name = 'Viewmodel',
 	Function = function(callback)
 		local viewmodel = gameCamera:FindFirstChild('Viewmodel')

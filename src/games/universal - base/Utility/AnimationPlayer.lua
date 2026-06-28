@@ -1,4 +1,4 @@
-local AnimationPlayer
+﻿local AnimationPlayer
 local IDBox
 local Priority
 local Speed
@@ -30,7 +30,7 @@ local function playAnimation(char)
 	end
 end
 
-AnimationPlayer = vape.Categories.Utility:CreateModule({
+AnimationPlayer = Kiss.Categories.Utility:CreateModule({
 	Name = 'AnimationPlayer',
 	Function = function(callback)
 		if callback then

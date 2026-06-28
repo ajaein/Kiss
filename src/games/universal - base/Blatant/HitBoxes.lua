@@ -1,10 +1,10 @@
-local HitBoxes
+﻿local HitBoxes
 local Targets
 local TargetPart
 local Expand
 local modified = {}
 
-HitBoxes = vape.Categories.Blatant:CreateModule({
+HitBoxes = Kiss.Categories.Blatant:CreateModule({
 	Name = 'HitBoxes',
 	Function = function(callback)
 		if callback then

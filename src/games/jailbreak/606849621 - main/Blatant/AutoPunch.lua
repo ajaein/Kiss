@@ -1,6 +1,6 @@
-local AutoPunch
+﻿local AutoPunch
 
-AutoPunch = vape.Categories.Blatant:CreateModule({
+AutoPunch = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoPunch',
 	Function = function(callback)
 		if callback then

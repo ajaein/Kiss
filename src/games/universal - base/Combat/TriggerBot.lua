@@ -1,4 +1,4 @@
-local TriggerBot
+﻿local TriggerBot
 local Targets
 local ShootDelay
 local Distance
@@ -19,7 +19,7 @@ local function getTriggerBotTarget()
 	end
 end
 
-TriggerBot = vape.Categories.Combat:CreateModule({
+TriggerBot = Kiss.Categories.Combat:CreateModule({
 	Name = 'TriggerBot',
 	Function = function(callback)
 		if callback then

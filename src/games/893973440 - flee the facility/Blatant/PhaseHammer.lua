@@ -1,4 +1,4 @@
-local PhaseHammer
+﻿local PhaseHammer
 local old
 
 local function getEnv()
@@ -31,7 +31,7 @@ local function addEntity(ent)
 	addHammer(ent.Character:FindFirstChild('Hammer'))
 end
 
-PhaseHammer = vape.Categories.Blatant:CreateModule({
+PhaseHammer = Kiss.Categories.Blatant:CreateModule({
 	Name = 'PhaseHammer',
 	Function = function(callback)
 		if callback then
@@ -48,3 +48,4 @@ PhaseHammer = vape.Categories.Blatant:CreateModule({
 	end,
 	Tooltip = 'Allow your hammer to clip through walls'
 })
+

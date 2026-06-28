@@ -1,8 +1,8 @@
-local TimeChanger
+﻿local TimeChanger
 local Value
 local old
 
-TimeChanger = vape.Legit:CreateModule({
+TimeChanger = Kiss.Legit:CreateModule({
 	Name = 'Time Changer',
 	Function = function(callback)
 		if callback then
@@ -26,3 +26,4 @@ Value = TimeChanger:CreateSlider({
 		end
 	end
 })
+

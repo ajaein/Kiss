@@ -1,4 +1,4 @@
-local Breadcrumbs
+﻿local Breadcrumbs
 local Texture
 local Lifetime
 local Thickness
@@ -6,7 +6,7 @@ local FadeIn
 local FadeOut
 local trail, point, point2
 
-Breadcrumbs = vape.Legit:CreateModule({
+Breadcrumbs = Kiss.Legit:CreateModule({
 	Name = 'Breadcrumbs',
 	Function = function(callback)
 		if callback then

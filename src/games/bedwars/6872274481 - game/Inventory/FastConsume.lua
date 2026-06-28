@@ -1,7 +1,7 @@
-local Value
+﻿local Value
 local oldclickhold, oldshowprogress
 
-local FastConsume = vape.Categories.Inventory:CreateModule({
+local FastConsume = Kiss.Categories.Inventory:CreateModule({
 	Name = 'FastConsume',
 	Function = function(callback)
 		if callback then

@@ -1,9 +1,9 @@
-local KitESP
+﻿local KitESP
 local Background
 local Color = {}
 local Reference = {}
 local Folder = Instance.new('Folder')
-Folder.Parent = vape.gui
+Folder.Parent = Kiss.gui
 
 local ESPKits = {
 	alchemist = {'alchemist_ingedients', 'wild_flower'},
@@ -57,7 +57,7 @@ local function addKit(tag, icon)
 	end
 end
 
-KitESP = vape.Categories.Render:CreateModule({
+KitESP = Kiss.Categories.Render:CreateModule({
 	Name = 'KitESP',
 	Function = function(callback)
 		if callback then

@@ -1,4 +1,4 @@
-local AntiFall
+﻿local AntiFall
 local Mode
 local Material
 local Color
@@ -14,7 +14,7 @@ local function getLowGround()
 	return mag
 end
 
-AntiFall = vape.Categories.Blatant:CreateModule({
+AntiFall = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AntiFall',
 	Function = function(callback)
 		if callback then

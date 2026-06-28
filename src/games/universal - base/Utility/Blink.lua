@@ -1,10 +1,10 @@
-local Blink
+﻿local Blink
 local Type
 local AutoSend
 local AutoSendLength
 local oldphys, oldsend
 
-Blink = vape.Categories.Utility:CreateModule({
+Blink = Kiss.Categories.Utility:CreateModule({
 	Name = 'Blink',
 	Function = function(callback)
 		if callback then

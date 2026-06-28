@@ -1,8 +1,8 @@
-local FastPlace
+﻿local FastPlace
 local Value
 local old
 
-FastPlace = vape.Categories.World:CreateModule({
+FastPlace = Kiss.Categories.World:CreateModule({
 	Name = 'FastPlace',
 	Function = function(callback)
 		if callback then

@@ -1,4 +1,4 @@
-local AutoToxic
+﻿local AutoToxic
 local GG
 local Toggles, Lists, said, dead = {}, {}, {}
 
@@ -22,11 +22,11 @@ local function sendMessage(name, obj, default)
 	end
 end
 
-AutoToxic = vape.Categories.Utility:CreateModule({
+AutoToxic = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoToxic',
 	Function = function(callback)
 		if callback then
-			AutoToxic:Clean(vapeEvents.MatchEnded.Event:Connect(function(won)
+			AutoToxic:Clean(KissEvents.MatchEnded.Event:Connect(function(won)
 				if GG.Enabled then
 					if textChatService.ChatVersion == Enum.ChatVersion.TextChatService then
 						textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('gg')

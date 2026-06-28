@@ -1,8 +1,8 @@
-local Clock
+﻿local Clock
 local TwentyFourHour
 local label
 
-Clock = vape.Legit:CreateModule({
+Clock = Kiss.Legit:CreateModule({
 	Name = 'Clock',
 	Function = function(callback)
 		if callback then

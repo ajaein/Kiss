@@ -1,4 +1,4 @@
-local DamageIndicator
+﻿local DamageIndicator
 local FontOption
 local Color
 local Size
@@ -10,7 +10,7 @@ end)
 tab = suc and tab or {}
 local oldvalues, oldfont = {}
 
-DamageIndicator = vape.Legit:CreateModule({
+DamageIndicator = Kiss.Legit:CreateModule({
 	Name = 'Damage Indicator',
 	Function = function(callback)
 		if callback then

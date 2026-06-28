@@ -1,7 +1,7 @@
-local GrenadeTP
+﻿local GrenadeTP
 local Range
 
-GrenadeTP = vape.Categories.Blatant:CreateModule({
+GrenadeTP = Kiss.Categories.Blatant:CreateModule({
 	Name = 'GrenadeTP',
 	Function = function(callback)
 		if callback then

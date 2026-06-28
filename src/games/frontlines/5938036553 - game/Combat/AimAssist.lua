@@ -1,4 +1,4 @@
-local AimAssist
+﻿local AimAssist
 local FOV
 local Speed
 local CircleColor
@@ -8,7 +8,7 @@ local CircleObject
 local rayCheck = RaycastParams.new()
 rayCheck.RespectCanCollide = true
 
-AimAssist = vape.Categories.Combat:CreateModule({
+AimAssist = Kiss.Categories.Combat:CreateModule({
 	Name = 'AimAssist',
 	Function = function(callback)
 		if CircleObject then
@@ -79,7 +79,7 @@ AimAssist:CreateToggle({
 			CircleObject = Drawing.new('Circle')
 			CircleObject.Filled = CircleFilled.Enabled
 			CircleObject.Color = Color3.fromHSV(CircleColor.Hue, CircleColor.Sat, CircleColor.Value)
-			CircleObject.Position = vape.gui.AbsoluteSize / 2
+			CircleObject.Position = Kiss.gui.AbsoluteSize / 2
 			CircleObject.Radius = FOV.Value
 			CircleObject.NumSides = 100
 			CircleObject.Transparency = 1 - CircleTransparency.Value
@@ -129,3 +129,4 @@ CircleFilled = AimAssist:CreateToggle({
 	Darker = true, 
 	Visible = false
 })
+

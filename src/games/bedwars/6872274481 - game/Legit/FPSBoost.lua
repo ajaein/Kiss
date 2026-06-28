@@ -1,9 +1,9 @@
-local FPSBoost
+﻿local FPSBoost
 local Kill
 local Visualizer
 local effects, util = {}, {}
 
-FPSBoost = vape.Legit:CreateModule({
+FPSBoost = Kiss.Legit:CreateModule({
 	Name = 'FPS Boost',
 	Function = function(callback)
 		if callback then

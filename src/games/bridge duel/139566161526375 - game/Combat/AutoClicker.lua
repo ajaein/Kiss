@@ -1,7 +1,7 @@
-local AutoClicker
+﻿local AutoClicker
 local CPS
 
-AutoClicker = vape.Categories.Combat:CreateModule({
+AutoClicker = Kiss.Categories.Combat:CreateModule({
 	Name = 'AutoClicker',
 	Function = function(callback)
 		if callback then

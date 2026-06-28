@@ -1,4 +1,4 @@
-local run = function(func) func() end
+﻿local run = function(func) func() end
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -11,9 +11,9 @@ local coreGui = cloneref(game:GetService('CoreGui'))
 
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local targetinfo = vape.Libraries.targetinfo
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local targetinfo = Kiss.Libraries.targetinfo
 local arena = {}
 
 local oldhit
@@ -36,7 +36,7 @@ local function calculateMoveVector()
 end
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 run(function()
@@ -46,9 +46,9 @@ run(function()
 		repeat
 			env = getsenv(charscript)
 			task.wait()
-		until env and env.startHit or vape.Loaded == nil
+		until env and env.startHit or Kiss.Loaded == nil
 
-		if vape.Loaded == nil then return end
+		if Kiss.Loaded == nil then return end
 	end
 
 	arena = {
@@ -72,7 +72,7 @@ run(function()
 		end
 	end
 
-	vape:Clean(function()
+	Kiss:Clean(function()
 		table.clear(arena)
 	end)
 end)
@@ -198,5 +198,5 @@ run(function()
 end)
 
 for _, v in {'AimAssist', 'Reach', 'SilentAim', 'AntiFall', 'Desync', 'Invisible', 'Jesus', 'MouseTP', 'Phase', 'SpinBot', 'Swim', 'TargetStrafe', 'AnimationPlayer', 'AntiRagdoll', 'ChatSpammer', 'Disabler', 'StateSpoofer', 'Freecam', 'Gravity', 'Parkour', 'SafeWalk', 'MurderMystery'} do
-	vape:Remove(v)
+	Kiss:Remove(v)
 end

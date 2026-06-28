@@ -1,4 +1,4 @@
-local Invisible
+﻿local Invisible
 local oldcf
 local animtrack
 local proper = true
@@ -19,7 +19,7 @@ local function animationTrickery()
 	end
 end
 
-Invisible = vape.Categories.Blatant:CreateModule({
+Invisible = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Invisible',
 	Function = function(callback)
 		if callback then

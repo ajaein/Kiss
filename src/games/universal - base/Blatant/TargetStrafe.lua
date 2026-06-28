@@ -1,4 +1,4 @@
-local TargetStrafe
+﻿local TargetStrafe
 local Targets
 local SearchRange
 local StrafeRange
@@ -7,7 +7,7 @@ local rayCheck = RaycastParams.new()
 rayCheck.RespectCanCollide = true
 local module, old
 
-TargetStrafe = vape.Categories.Blatant:CreateModule({
+TargetStrafe = Kiss.Categories.Blatant:CreateModule({
 	Name = 'TargetStrafe',
 	Function = function(callback)
 		if callback then
@@ -19,7 +19,7 @@ TargetStrafe = vape.Categories.Blatant:CreateModule({
 			end
 
 			old = module.moveFunction
-			local flymod, ang, oldent = vape.Modules.Fly or {Enabled = false}
+			local flymod, ang, oldent = Kiss.Modules.Fly or {Enabled = false}
 			module.moveFunction = function(self, vec, face)
 				local wallcheck = Targets.Walls.Enabled
 				local ent = not inputService:IsKeyDown(Enum.KeyCode.S) and entitylib.EntityPosition({

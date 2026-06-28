@@ -1,4 +1,4 @@
-local Xray
+﻿local Xray
 local List
 local modified = {}
 
@@ -9,7 +9,7 @@ local function modifyPart(v)
 	end
 end
 
-Xray = vape.Categories.World:CreateModule({
+Xray = Kiss.Categories.World:CreateModule({
 	Name = 'Xray',
 	Function = function(callback)
 		if callback then

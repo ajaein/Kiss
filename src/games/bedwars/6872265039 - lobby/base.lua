@@ -1,4 +1,4 @@
-local run = function(func) func() end
+﻿local run = function(func) func() end
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -6,15 +6,15 @@ local replicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
 local inputService = cloneref(game:GetService('UserInputService'))
 
 local lplr = playersService.LocalPlayer
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local sessioninfo = vape.Libraries.sessioninfo
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local sessioninfo = Kiss.Libraries.sessioninfo
 local bedwars = {}
 
-lplr:Kick('Bedwars is no longer supported by Vape V4, thank you for 5 years of support ❤️')
+lplr:Kick('Bedwars is no longer supported by Kiss V1, thank you for 5 years of support ❤️')
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 run(function()
@@ -51,13 +51,13 @@ run(function()
 	local wins = sessioninfo:AddItem('Wins')
 	local games = sessioninfo:AddItem('Games')
 
-	vape:Clean(function()
+	Kiss:Clean(function()
 		table.clear(bedwars)
 	end)
 end)
 
-for _, v in vape.Modules do
+for _, v in Kiss.Modules do
 	if v.Category == 'Combat' or v.Category == 'Minigames' then
-		vape:Remove(i)
+		Kiss:Remove(i)
 	end
 end

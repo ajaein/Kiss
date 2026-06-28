@@ -1,4 +1,4 @@
-local Reach
+﻿local Reach
 local Targets
 local Mode
 local Value
@@ -7,7 +7,7 @@ local Overlay = OverlapParams.new()
 Overlay.FilterType = Enum.RaycastFilterType.Include
 local modified = {}
 
-Reach = vape.Categories.Combat:CreateModule({
+Reach = Kiss.Categories.Combat:CreateModule({
 	Name = 'Reach',
 	Function = function(callback)
 		if callback then

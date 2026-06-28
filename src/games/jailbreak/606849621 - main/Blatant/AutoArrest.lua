@@ -1,6 +1,6 @@
-local AutoArrest
+﻿local AutoArrest
 
-AutoArrest = vape.Categories.Blatant:CreateModule({
+AutoArrest = Kiss.Categories.Blatant:CreateModule({
 	Name = 'AutoArrest',
 	Function = function(callback)
 		if callback then

@@ -1,7 +1,7 @@
-local Desync
+﻿local Desync
 local hook
 
-Desync = vape.Categories.Blatant:CreateModule({
+Desync = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Desync',
 	Function = function(callback)
 		if callback then

@@ -1,6 +1,6 @@
-local old
+﻿local old
 
-vape.Categories.Combat:CreateModule({
+Kiss.Categories.Combat:CreateModule({
 	Name = 'NoClickDelay',
 	Function = function(callback)
 		if callback then

@@ -1,8 +1,8 @@
-local Jesus
+﻿local Jesus
 local params = RaycastParams.new()
 params.FilterType = Enum.RaycastFilterType.Include
 
-Jesus = vape.Categories.Blatant:CreateModule({
+Jesus = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Jesus',
 	Function = function(callback)
 		if callback then

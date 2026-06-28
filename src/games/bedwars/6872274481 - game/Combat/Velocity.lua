@@ -1,11 +1,11 @@
-local Velocity
+﻿local Velocity
 local Horizontal
 local Vertical
 local Chance
 local TargetCheck
 local rand, old = Random.new()
 
-Velocity = vape.Categories.Combat:CreateModule({
+Velocity = Kiss.Categories.Combat:CreateModule({
 	Name = 'Velocity',
 	Function = function(callback)
 		if callback then

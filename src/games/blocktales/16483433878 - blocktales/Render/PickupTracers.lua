@@ -1,11 +1,11 @@
-local PickupTracers
+﻿local PickupTracers
 local Color
 local Transparency
 local Bux
 local Reference = {}
 
 local function Added(ent)
-	if vape.ThreadFix then
+	if Kiss.ThreadFix then
 		setthreadidentity(8)
 	end
 
@@ -23,7 +23,7 @@ end
 local function Removed(ent)
 	local v = Reference[ent]
 	if v then
-		if vape.ThreadFix then
+		if Kiss.ThreadFix then
 			setthreadidentity(8)
 		end
 
@@ -43,7 +43,7 @@ local function ColorFunc(hue, sat, val)
 end
 
 local function Loop()
-	local screenSize = vape.gui.AbsoluteSize
+	local screenSize = Kiss.gui.AbsoluteSize
 	local startVector = Vector2.new(screenSize.X / 2, screenSize.Y / 2)
 
 	for ent, EntityTracer in Reference do
@@ -69,7 +69,7 @@ local function Loop()
 	end
 end
 
-PickupTracers = vape.Categories.Render:CreateModule({
+PickupTracers = Kiss.Categories.Render:CreateModule({
 	Name = 'PickupTracers',
 	Function = function(callback)
 		if callback then

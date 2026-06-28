@@ -1,4 +1,4 @@
-local run = function(func) func() end
+﻿local run = function(func) func() end
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -9,10 +9,10 @@ local runService = cloneref(game:GetService('RunService'))
 
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
-local vape = shared.vape
-local entitylib = vape.Libraries.entity
-local targetinfo = vape.Libraries.targetinfo
-local prediction = vape.Libraries.prediction
+local Kiss = shared.Kiss
+local entitylib = Kiss.Libraries.entity
+local targetinfo = Kiss.Libraries.targetinfo
+local prediction = Kiss.Libraries.prediction
 
 local bd = {}
 local store = {
@@ -25,7 +25,7 @@ local function getTool()
 end
 
 local function notif(...)
-	return vape:CreateNotification(...)
+	return Kiss:CreateNotification(...)
 end
 
 local function parsePositions(v, func)
@@ -70,13 +70,13 @@ run(function()
 
 	task.spawn(function()
 		local map = workspace:WaitForChild('Map', 99999)
-		if map and vape.Loaded ~= nil then
-			vape:Clean(map.DescendantAdded:Connect(function(v)
+		if map and Kiss.Loaded ~= nil then
+			Kiss:Clean(map.DescendantAdded:Connect(function(v)
 				parsePositions(v, function(pos)
 					store.blocks[pos] = v
 				end)
 			end))
-			vape:Clean(map.DescendantRemoving:Connect(function(v)
+			Kiss:Clean(map.DescendantRemoving:Connect(function(v)
 				parsePositions(v, function(pos)
 					if store.blocks[pos] == v then
 						store.blocks[pos] = nil
@@ -93,12 +93,12 @@ run(function()
 		end
 	end)
 
-	vape:Clean(function()
+	Kiss:Clean(function()
 		table.clear(store.blocks)
 		table.clear(store)
 	end)
 end)
 
 for _, v in {'Reach', 'SilentAim', 'Disabler', 'HitBoxes', 'MurderMystery', 'AutoRejoin'} do
-	vape:Remove(v)
+	Kiss:Remove(v)
 end

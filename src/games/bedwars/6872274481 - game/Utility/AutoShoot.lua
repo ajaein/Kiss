@@ -1,4 +1,4 @@
-local shooting, old = false
+﻿local shooting, old = false
 
 local function getCrossbows()
 	local crossbows = {}
@@ -8,7 +8,7 @@ local function getCrossbows()
 	return crossbows
 end
 
-vape.Categories.Utility:CreateModule({
+Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoShoot',
 	Function = function(callback)
 		if callback then
@@ -42,3 +42,4 @@ vape.Categories.Utility:CreateModule({
 	end,
 	Tooltip = 'Automatically crossbow macro\'s'
 })
+

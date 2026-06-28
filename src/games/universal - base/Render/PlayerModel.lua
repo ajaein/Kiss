@@ -1,4 +1,4 @@
-local PlayerModel
+﻿local PlayerModel
 local Scale
 local Local
 local Mesh
@@ -7,7 +7,7 @@ local Rots = {}
 local models = {}
 
 local function addMesh(ent)
-	if vape.ThreadFix then 
+	if Kiss.ThreadFix then 
 		setthreadidentity(8)
 	end
 	local root = ent.RootPart
@@ -37,7 +37,7 @@ local function removeMesh(ent)
 	end
 end
 
-PlayerModel = vape.Categories.Render:CreateModule({
+PlayerModel = Kiss.Categories.Render:CreateModule({
 	Name = 'PlayerModel',
 	Function = function(callback)
 		if callback then 
@@ -115,3 +115,4 @@ Texture = PlayerModel:CreateTextBox({
 		end
 	end
 })
+

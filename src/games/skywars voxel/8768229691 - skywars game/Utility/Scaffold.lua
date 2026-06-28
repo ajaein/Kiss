@@ -1,4 +1,4 @@
-local Scaffold
+﻿local Scaffold
 local Expand
 local Tower
 local Downwards
@@ -81,7 +81,7 @@ local function getBlock()
 	end
 end
 
-Scaffold = vape.Categories.Utility:CreateModule({
+Scaffold = Kiss.Categories.Utility:CreateModule({
 	Name = 'Scaffold',
 	Function = function(callback)
 		if callback then

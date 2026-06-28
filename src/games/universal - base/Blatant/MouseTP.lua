@@ -1,4 +1,4 @@
-local MouseTP
+﻿local MouseTP
 local Mode
 local MovementMode
 local Length
@@ -22,7 +22,7 @@ local function getWaypointInMouse()
 	return obj
 end
 
-MouseTP = vape.Categories.Blatant:CreateModule({
+MouseTP = Kiss.Categories.Blatant:CreateModule({
 	Name = 'MouseTP',
 	Function = function(callback)
 		if callback then

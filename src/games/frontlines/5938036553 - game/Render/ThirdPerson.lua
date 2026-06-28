@@ -1,8 +1,8 @@
-local ThirdPerson
+﻿local ThirdPerson
 local Distance
 local hook = false
 
-ThirdPerson = vape.Categories.Render:CreateModule({
+ThirdPerson = Kiss.Categories.Render:CreateModule({
 	Name = 'ThirdPerson',
 	Function = function(callback)
 		if callback then

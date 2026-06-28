@@ -1,4 +1,4 @@
-local VehicleWallbang
+﻿local VehicleWallbang
 local modified = {}
 
 local function Modify(part)
@@ -11,7 +11,7 @@ local function Modify(part)
 	end
 end
 
-VehicleWallbang = vape.Categories.Blatant:CreateModule({
+VehicleWallbang = Kiss.Categories.Blatant:CreateModule({
 	Name = 'VehicleWallbang',
 	Function = function(callback)
 		if callback then

@@ -1,6 +1,6 @@
-local FlyingAttack
+﻿local FlyingAttack
 
-FlyingAttack = vape.Categories.Blatant:CreateModule({
+FlyingAttack = Kiss.Categories.Blatant:CreateModule({
 	Name = 'FlyingAttack',
 	Function = function(callback)
 		if callback then

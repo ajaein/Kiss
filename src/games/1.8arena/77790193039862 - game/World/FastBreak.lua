@@ -1,8 +1,8 @@
-local FastBreak
+﻿local FastBreak
 local Value
 local old
 
-FastBreak = vape.Categories.World:CreateModule({
+FastBreak = Kiss.Categories.World:CreateModule({
 	Name = 'FastBreak',
 	Function = function(callback)
 		if callback then

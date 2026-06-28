@@ -1,4 +1,4 @@
-local run = function(func) 
+﻿local run = function(func) 
 	func() 
 end
 local cloneref = cloneref or function(obj) 
@@ -13,8 +13,8 @@ local coreGui = cloneref(game:GetService('CoreGui'))
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
 
-local vape = shared.vape
-local sessioninfo = vape.Libraries.sessioninfo
+local Kiss = shared.Kiss
+local sessioninfo = Kiss.Libraries.sessioninfo
 
 run(function()
 	local kills = sessioninfo:AddItem('Kills')

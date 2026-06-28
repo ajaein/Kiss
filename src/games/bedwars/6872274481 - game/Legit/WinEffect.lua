@@ -1,12 +1,12 @@
-local WinEffect
+﻿local WinEffect
 local List
 local NameToId = {}
 
-WinEffect = vape.Legit:CreateModule({
+WinEffect = Kiss.Legit:CreateModule({
 	Name = 'WinEffect',
 	Function = function(callback)
 		if callback then
-			WinEffect:Clean(vapeEvents.MatchEndEvent.Event:Connect(function()
+			WinEffect:Clean(KissEvents.MatchEndEvent.Event:Connect(function()
 				for i, v in getconnections(bedwars.Client:Get('WinEffectTriggered').instance.OnClientEvent) do
 					if v.Function then
 						v.Function({

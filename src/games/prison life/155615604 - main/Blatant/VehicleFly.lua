@@ -1,10 +1,10 @@
-local VehicleFly
+﻿local VehicleFly
 local Mode
 local Speed
 local welds = {}
 local up, down = 0, 0
 
-VehicleFly = vape.Categories.Blatant:CreateModule({
+VehicleFly = Kiss.Categories.Blatant:CreateModule({
 	Name = 'VehicleFly',
 	Function = function(callback)
 		if callback then

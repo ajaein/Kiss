@@ -1,7 +1,7 @@
-local Sprint
+﻿local Sprint
 local old
 
-Sprint = vape.Categories.Combat:CreateModule({
+Sprint = Kiss.Categories.Combat:CreateModule({
 	Name = 'Sprint',
 	Function = function(callback)
 		if callback then

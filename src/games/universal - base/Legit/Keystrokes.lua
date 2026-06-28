@@ -1,4 +1,4 @@
-local Keystrokes
+﻿local Keystrokes
 local Style
 local Color
 local keys, holder = {}
@@ -59,7 +59,7 @@ local function updateKey(inputType)
 	end
 end
 
-Keystrokes = vape.Legit:CreateModule({
+Keystrokes = Kiss.Legit:CreateModule({
 	Name = 'Keystrokes',
 	Function = function(callback)
 		if callback then

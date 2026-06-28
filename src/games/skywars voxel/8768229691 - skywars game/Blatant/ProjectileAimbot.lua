@@ -1,4 +1,4 @@
-local TargetPart
+﻿local TargetPart
 local FOV
 local old, oldMobile
 local rayCheck = RaycastParams.new()
@@ -28,7 +28,7 @@ local function aimFunction(...)
 	return old(...)
 end
 
-local ProjectileAimbot = vape.Categories.Blatant:CreateModule({
+local ProjectileAimbot = Kiss.Categories.Blatant:CreateModule({
 	Name = 'ProjectileAimbot',
 	Function = function(callback)
 		if callback then

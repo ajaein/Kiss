@@ -1,4 +1,4 @@
-local Mode
+﻿local Mode
 local StudLimit = {Object = {}}
 local rayCheck = RaycastParams.new()
 rayCheck.RespectCanCollide = true
@@ -84,7 +84,7 @@ local Functions = {
 }
 Functions.Motor = Functions.CFrame
 
-Phase = vape.Categories.Blatant:CreateModule({
+Phase = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Phase',
 	Function = function(callback)
 		if callback then

@@ -1,6 +1,6 @@
-local Phase
+﻿local Phase
 
-Phase = vape.Categories.Blatant:CreateModule({
+Phase = Kiss.Categories.Blatant:CreateModule({
 	Name = 'Phase',
 	Function = function(callback)
 		if callback then

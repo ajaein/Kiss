@@ -1,4 +1,4 @@
-local CheatDetector
+﻿local CheatDetector
 local AddTarget
 local overlap = OverlapParams.new()
 overlap.CollisionGroup = 'Players'
@@ -23,11 +23,11 @@ local whiteliststates = {
 	[Enum.HumanoidStateType.None] = true
 }
 
-CheatDetector = vape.Categories.Utility:CreateModule({
+CheatDetector = Kiss.Categories.Utility:CreateModule({
 	Name = 'CheatDetector',
 	Function = function(callback)
 		if callback then
-			CheatDetector:Clean(vapeEvents.CheatFlagged.Event:Connect(function(plr, flagname)
+			CheatDetector:Clean(KissEvents.CheatFlagged.Event:Connect(function(plr, flagname)
 				notif('CheatDetector', 'This player may be cheating! ('..flagname..'): '..plr.Name, 60, 'warning')
 				if AddTarget.Enabled then
 					tempTargets[plr.Name] = true

@@ -1,7 +1,7 @@
-local AutoRejoin
+﻿local AutoRejoin
 local Sort
 
-AutoRejoin = vape.Categories.Utility:CreateModule({
+AutoRejoin = Kiss.Categories.Utility:CreateModule({
 	Name = 'AutoRejoin',
 	Function = function(callback)
 		if callback then
