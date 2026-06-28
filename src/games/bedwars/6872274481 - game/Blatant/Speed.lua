@@ -1,4 +1,4 @@
-﻿local Speed
+local Speed
 local Value
 local WallCheck
 local AutoJump
@@ -17,7 +17,7 @@ Speed = Kiss.Categories.Blatant:CreateModule({
 
 		if callback then
 			Speed:Clean(runService.PreSimulation:Connect(function(dt)
-				bedwars.StatefulEntityKnockbackController.lastImpulseTime = callback and math.huge or time()
+			bedwars.StatefulEntityKnockbackController.lastImpulseTime = callback and (time() + 9e9) or time()
 				if entitylib.isAlive and not Fly.Enabled and not InfiniteFly.Enabled and not LongJump.Enabled and isnetworkowner(entitylib.character.RootPart) then
 					local state = entitylib.character.Humanoid:GetState()
 					if state == Enum.HumanoidStateType.Climbing then return end

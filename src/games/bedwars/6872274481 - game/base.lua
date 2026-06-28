@@ -1,4 +1,4 @@
-﻿local run = function(func)
+local run = function(func)
 	func()
 end
 local cloneref = cloneref or function(obj)
@@ -31,7 +31,7 @@ local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
 local assetfunction = getcustomasset
 
-lplr:Kick('Bedwars is no longer supported by Kiss V1, thank you for 5 years of support ❤️')
+-- Bedwars support re-enabled
 
 local Kiss = shared.Kiss
 local entitylib = Kiss.Libraries.entity
@@ -800,7 +800,14 @@ run(function()
 
 					if Reach.Enabled or HitBoxes.Enabled then
 						attackTable.validate.raycast = attackTable.validate.raycast or {}
-						attackTable.validate.selfPosition.value += CFrame.lookAt(selfpos, targetpos).LookVector * math.max((selfpos - targetpos).Magnitude - 14.399, 0)
+						-- Bypass: clamp position offset within server tolerance
+						local dist = (selfpos - targetpos).Magnitude
+						local clampedOffset = math.min(math.max(dist - 14.399, 0), 14.399)
+						local lookDir = CFrame.lookAt(selfpos, targetpos).LookVector
+						attackTable.validate.selfPosition.value = selfpos + lookDir * clampedOffset
+						-- Bypass: ensure raycast validation data is complete
+						attackTable.validate.raycast.cameraPosition = attackTable.validate.raycast.cameraPosition or {value = attackTable.validate.selfPosition.value}
+						attackTable.validate.raycast.cursorDirection = attackTable.validate.raycast.cursorDirection or {value = lookDir}
 					end
 
 					if suc and plr then

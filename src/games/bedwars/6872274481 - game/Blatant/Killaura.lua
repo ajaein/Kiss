@@ -1,4 +1,4 @@
-﻿local Attacking
+local Attacking
 run(function()
 	local Killaura
 	local Targets
@@ -27,6 +27,8 @@ run(function()
 	local LegitAura
 	local Particles, Boxes = {}, {}
 	local anims, AnimDelay, AnimTween, armC0 = Kiss.Libraries.auraanims, tick()
+	local lastAuraAttack = tick()
+	local auraRand = Random.new()
 	local AttackRemote = {FireServer = function() end}
 	task.spawn(function()
 		AttackRemote = bedwars.Client:Get(remotes.AttackEntity).instance
@@ -174,14 +176,20 @@ run(function()
 								local actualRoot = v.Character.PrimaryPart
 								if actualRoot then
 									local dir = CFrame.lookAt(selfpos, actualRoot.Position).LookVector
-									local pos = selfpos + dir * math.max(delta.Magnitude - 14.399, 0)
+									-- Bypass: clamp position offset within server tolerance (14.4 studs max)
+									local distOffset = math.min(math.max(delta.Magnitude - 14.399, 0), 14.399)
+									local pos = selfpos + dir * distOffset
+									local atkSpeed = meta.sword.attackSpeed or 0.4
+									-- Bypass: enforce server-side attack speed cooldown
+									if (tick() - lastAuraAttack) < atkSpeed * 0.85 then continue end
+									lastAuraAttack = tick()
 									bedwars.SwordController.lastAttack = workspace:GetServerTimeNow()
 									store.attackReach = (delta.Magnitude * 100) // 1 / 100
 									store.attackReachUpdate = tick() + 1
 
 									AttackRemote:FireServer({
 										weapon = sword.tool,
-										chargedAttack = {chargeRatio = 0},
+										chargedAttack = {chargeRatio = auraRand:NextNumber(0, 0.15)},
 										entityInstance = v.Character,
 										validate = {
 											raycast = {

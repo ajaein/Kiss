@@ -1,4 +1,4 @@
-﻿repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game:IsLoaded()
 if shared.Kiss then shared.Kiss:Uninject() end
 
 local Kiss
@@ -79,7 +79,7 @@ local function finishLoading()
 end
 
 if not isfile('newKiss/profiles/gui.txt') then
-	writefile('newKiss/profiles/gui.txt', 'new')
+	writefile('newKiss/profiles/gui.txt', 'vape')
 end
 local gui = readfile('newKiss/profiles/gui.txt')
 

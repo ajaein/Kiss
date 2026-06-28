@@ -1,4 +1,4 @@
-﻿local Fly
+local Fly
 local LongJump
 run(function()
 	local Value
@@ -75,6 +75,10 @@ run(function()
 
 						root.CFrame += destination
 						root.AssemblyLinearVelocity = (moveDirection * velo) + Vector3.new(0, mass, 0)
+						-- Bypass: periodically reset AirTime to prevent server fall damage checks
+						if entitylib.character.AirTime and (tick() - entitylib.character.AirTime) > 1.5 then
+							entitylib.character.AirTime = tick()
+						end
 					end
 				end))
 				Fly:Clean(inputService.InputBegan:Connect(function(input)

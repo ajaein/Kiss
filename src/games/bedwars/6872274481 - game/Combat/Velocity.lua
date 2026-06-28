@@ -1,4 +1,4 @@
-﻿local Velocity
+local Velocity
 local Horizontal
 local Vertical
 local Chance
@@ -21,8 +21,8 @@ Velocity = Kiss.Categories.Combat:CreateModule({
 				if check then
 					knockback = knockback or {}
 					if Horizontal.Value == 0 and Vertical.Value == 0 then return end
-					knockback.horizontal = (knockback.horizontal or 1) * (Horizontal.Value / 100)
-					knockback.vertical = (knockback.vertical or 1) * (Vertical.Value / 100)
+				knockback.horizontal = (knockback.horizontal or 1) * math.max(Horizontal.Value / 100, 0.01)
+					knockback.vertical = (knockback.vertical or 1) * math.max(Vertical.Value / 100, 0.01)
 				end
 				
 				return old(root, mass, dir, knockback, ...)
