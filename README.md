@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./README/Kisslogo-white.png">
     <source media="(prefers-color-scheme: light)" srcset="./README/Kisslogo-dark.png">
@@ -20,7 +20,7 @@
 1. Download the specific scripting utility of your choice.
 2. Execute the provided loadstring below.
 ```luau
-loadstring(error('Github downloads disabled'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ajaein/Kiss/main/NewMainScript.lua", true))()
 ```
 
 ## Possible Issues
