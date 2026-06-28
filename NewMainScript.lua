@@ -1,4 +1,4 @@
-﻿local isfile = isfile or function(file)
+local isfile = isfile or function(file)
 	local suc, res = pcall(function()
 		return readfile(file)
 	end)
@@ -11,7 +11,7 @@ end
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return error('Github downloads disabled')..'/'..select(1, path:gsub('newKiss/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/ajaein/Kiss/main/'..select(1, path:gsub('newKiss/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)

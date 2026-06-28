@@ -24,7 +24,7 @@ local playersService = cloneref(game:GetService('Players'))
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return error('Github downloads disabled')..'/'..select(1, path:gsub('newKiss/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/ajaein/Kiss/main/'..select(1, path:gsub('newKiss/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -56,7 +56,7 @@ local function finishLoading()
 				if shared.KissDeveloper then
 					loadstring(readfile('newKiss/loader.lua'), 'loader')()
 				else
-					loadstring(error('Github downloads disabled')..'/loader.lua', true), 'loader')()
+					loadstring(game:HttpGet('https://raw.githubusercontent.com/ajaein/Kiss/main/loader.lua', true), 'loader')()
 				end
 			]]
 			if shared.KissDeveloper then
@@ -96,7 +96,7 @@ if not shared.KissIndependent then
 	else
 		if not shared.KissDeveloper then
 			local suc, res = pcall(function()
-				return error('Github downloads disabled')..'/games/'..game.PlaceId..'.lua', true)
+				return game:HttpGet('https://raw.githubusercontent.com/ajaein/Kiss/main/games/'..game.PlaceId..'.lua', true)
 			end)
 			if suc and res ~= '404: Not Found' then
 				loadstring(downloadFile('newKiss/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
